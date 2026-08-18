@@ -1,0 +1,1063 @@
+{
+  "pack_version": "2026-08-18+340a252a",
+  "product": {
+    "id": "aider",
+    "name": "Aider",
+    "vendor": "Aider AI",
+    "canonicalUrl": "https://aider.chat/",
+    "repositoryUrl": "https://github.com/Aider-AI/aider",
+    "proposedType": "runtime",
+    "lastVerified": "2026-08-17",
+    "compare": {
+      "license": {
+        "kind": "text",
+        "value": "Apache-2.0",
+        "claimId": "claim-aider-w2-license"
+      },
+      "pricing": {
+        "kind": "text",
+        "value": "aider owned price: unknown; provider costs: external",
+        "claimId": "claim-aider-w2-pricing"
+      },
+      "loc": {
+        "kind": "text",
+        "value": "local repository execution",
+        "claimId": "claim-aider-w2-execution"
+      },
+      "primary": {
+        "kind": "text",
+        "value": "terminal CLI, voice CLI",
+        "claimId": "claim-aider-w2-surface-cli-voice"
+      },
+      "loop": {
+        "kind": "state",
+        "value": "s",
+        "claimId": "claim-aider-cmp-loop-supported"
+      },
+      "gates": {
+        "kind": "state",
+        "value": "s",
+        "claimId": "claim-aider-cmp-human-gates"
+      },
+      "byok": {
+        "kind": "state",
+        "value": "s",
+        "claimId": "claim-aider-cmp-byok"
+      },
+      "local": {
+        "kind": "state",
+        "value": "s",
+        "claimId": "claim-aider-cmp-local-models"
+      },
+      "mobile": {
+        "kind": "state",
+        "value": "u",
+        "claimId": "claim-aider-cmp-mobile"
+      },
+      "sub": {
+        "kind": "state",
+        "value": "u",
+        "claimId": "claim-aider-cmp-subscription-reuse"
+      },
+      "sandbox": {
+        "kind": "state",
+        "value": "u",
+        "claimId": "claim-aider-cmp-isolation-unsupported"
+      },
+      "remote": {
+        "kind": "state",
+        "value": "u",
+        "claimId": "claim-aider-cmp-remote-unsupported"
+      },
+      "secondary": {
+        "kind": "text",
+        "value": "Aider voice-enabled CLI",
+        "claimId": "claim-aider-w2-surface-cli-voice"
+      }
+    },
+    "surfaces_summary": {
+      "count": 7,
+      "names": [
+        "Aider experimental browser UI",
+        "Aider terminal CLI",
+        "Aider in GitHub Codespaces terminal",
+        "Aider CLI in Docker",
+        "Aider IDE and editor watch mode",
+        "Aider Python scripting API",
+        "Aider voice-enabled CLI"
+      ]
+    },
+    "catalogGroup": {
+      "id": "independent-local-runtimes",
+      "label": "Independent local runtimes",
+      "kind": "comparison",
+      "role": "core",
+      "confidence": "high"
+    },
+    "notFor": [
+      "unknown for listed remote, mobile, messaging, and orchestration routes"
+    ]
+  },
+  "dossier": {
+    "id": "aider",
+    "name": "Aider",
+    "verified": "2026-08-17",
+    "sections": [
+      {
+        "id": "identity-and-current-status",
+        "heading": "Identity and current status",
+        "body": "- Project ID: `aider`\r\n- Canonical name: Aider (`claim-aider-w2-identity`)\r\n- Current status: dormant. The repository is not archived (`claim-aider-w2-status`). Latest GitHub release remains v0.86.0 (2025-08-09); the maintainer said on 2025-10-30 he was occupied with other projects; PyPI later published 0.86.2 on 2026-02-12 (`claim-aider-sf-dormant-2026-08-15`, `claim-aider-w2-version-conflict`, `claim-aider-w2-version-tags`, `claim-aider-w2-version-package`).\r\n- Last source-backed identity check: 2026-08-10",
+        "claimIds": []
+      },
+      {
+        "id": "what-it-is-and-is-not",
+        "heading": "What it is and is not",
+        "body": "- What it is: a local terminal pair-programming runtime with repository-map, file, Git, and provider integrations (`claim-aider-w2-primary-type`, `claim-aider-w2-unique`).\r\n- What it is not: checked evidence does not establish a hosted remote agent, native mobile client, messaging gateway, vendor relay, scheduler, or parallel agent system (`claim-aider-w2-not-for`).",
+        "claimIds": []
+      },
+      {
+        "id": "architecture-and-agent-loop-ownership",
+        "heading": "Architecture and agent-loop ownership",
+        "body": "- Primary type: `runtime` (`claim-aider-w2-primary-type`)\r\n- Agent-loop owner: Aider's Coder assembles context, calls the configured model, applies edits, runs approved local actions, and records Git changes (`claim-aider-w2-loop-owner`).\r\n- Architecture: local process against a repository, with optional Docker or GitHub Codespaces host routes (`claim-aider-w2-execution`, `claim-aider-w2-optional-docker`, `claim-aider-w2-surface-codespaces`).",
+        "claimIds": []
+      },
+      {
+        "id": "surfaces-and-execution-location",
+        "heading": "Surfaces and execution location",
+        "body": "- Surface IDs: `surface-aider-cli`, `surface-aider-voice-cli`, `surface-aider-browser-ui`, `surface-aider-ide-watch`, `surface-aider-python-api`, `surface-aider-docker-cli`, `surface-aider-codespaces`.\r\n- Execution location: local host by default; optional same-device Docker container; GitHub-managed Codespaces terminal (`claim-aider-w2-execution`, `claim-aider-w2-optional-docker`, `claim-aider-w2-surface-codespaces`).",
+        "claimIds": []
+      },
+      {
+        "id": "model-auth-provider-strategy",
+        "heading": "Model/auth/provider strategy",
+        "body": "- Model strategy: main, weak, and editor models; aliases; in-chat switching; reasoning-effort and thinking-token controls (`claim-aider-w2-model-strategy`). The weak model is not established as fallback.\r\n- Auth strategy: user-supplied provider credentials (`claim-aider-w2-provider-auth`).\r\n- Provider support: LiteLLM, OpenAI-compatible endpoints, OpenAI, Anthropic, Ollama, and other documented providers (`claim-aider-w2-provider-auth`).",
+        "claimIds": []
+      },
+      {
+        "id": "context-memory-compaction-and-session-behavior",
+        "heading": "Context, memory, compaction, and session behavior",
+        "body": "- Context behavior: ranked repository map, local history, context controls, and selected file content (`claim-aider-w2-context-session`).\r\n- Memory: local session-history restoration is supported; a separate project-memory service remains unknown (`claim-aider-w2-context-session`).\r\n- Compaction: ChatSummary compaction is included in the context/session claim (`claim-aider-w2-context-session`).\r\n- Session behavior: local history files and optional restore; cross-machine resume remains unknown (`claim-aider-w2-context-session`, `claim-aider-w2-not-for`).",
+        "claimIds": []
+      },
+      {
+        "id": "tools-extensions-mcp-skills-hooks-and-apis",
+        "heading": "Tools, extensions, MCP, skills, hooks, and APIs",
+        "body": "- Tools: files, repository map, Git, shell, tests, lint, web scrape, image input, voice, diff, undo, watch, and scripting (`claim-aider-w2-tools-api`).\r\n- Extensions: no separate first-party extension framework was established beyond watch mode, configuration, and scripting; `unknown`.\r\n- MCP: `unknown`.\r\n- Skills: `unknown`.\r\n- Hooks: lifecycle hooks are `unknown`; Git pre-commit verification is a separate documented control.\r\n- APIs: one-shot CLI scripting and a local Python Coder API (`claim-aider-w2-surface-api`, `claim-aider-w2-tools-api`).",
+        "claimIds": []
+      },
+      {
+        "id": "orchestration-and-parallelism",
+        "heading": "Orchestration and parallelism",
+        "body": "- Orchestration: Architect mode is a sequential architect request followed by an editor request (`claim-aider-w2-orchestration`).\r\n- Parallelism: subagents, agent teams, and parallel workers remain unknown (`claim-aider-w2-not-for`).",
+        "claimIds": []
+      },
+      {
+        "id": "isolation-permissions-security-and-data-path",
+        "heading": "Isolation, permissions, security, and data path",
+        "body": "- Isolation: no default built-in sandbox was established; optional Docker maps the repository into a container (`claim-aider-w2-optional-docker`).\r\n- Permissions: shell work and edits to files outside the chat set use confirmation paths; dry-run and Git controls are available (`claim-aider-w2-security-data`).\r\n- Security: no formal Aider security audit, threat model, or repository security policy was established.\r\n- Data path: Aider assembles repository and chat context locally and sends it to the configured LiteLLM endpoint; provider retention remains provider-specific (`claim-aider-w2-security-data`).",
+        "claimIds": []
+      },
+      {
+        "id": "interface-inventory-plus-remote-mobile-background-behavior",
+        "heading": "Interface inventory plus remote/mobile/background behavior",
+        "body": "- Interface and surface IDs:\r\n  - Terminal: `surface-aider-cli`, `surface-aider-voice-cli` (`claim-aider-w2-surface-cli-voice`).\r\n  - Browser: `surface-aider-browser-ui` (`claim-aider-w2-surface-browser`).\r\n  - IDE watch: `surface-aider-ide-watch` (`claim-aider-w2-surface-watch`).\r\n  - API: `surface-aider-python-api` (`claim-aider-w2-surface-api`).\r\n  - Optional hosts: `surface-aider-docker-cli`, `surface-aider-codespaces` (`claim-aider-w2-optional-docker`, `claim-aider-w2-surface-codespaces`).\r\n- Remote behavior: remote start, cross-machine resume, first-party remote client, and vendor relay remain unknown (`claim-aider-w2-not-for`). Generic SSH is not treated as a native Aider surface.\r\n- Mobile behavior: native iOS/Android, mobile web, messaging, and Termux guidance remain unknown (`claim-aider-w2-not-for`). Voice input is not a mobile route.\r\n- Background behavior: scheduler, daemon, hosted worker, and issue-to-PR routes remain unknown (`claim-aider-w2-not-for`).",
+        "claimIds": []
+      },
+      {
+        "id": "pricing-license-maintenance-and-lock-in",
+        "heading": "Pricing, license, maintenance, and lock-in",
+        "body": "- Pricing: no Aider-owned subscription price was established; provider and Copilot costs are external (`claim-aider-w2-pricing`).\r\n- License: Apache-2.0 (`claim-aider-w2-license`).\r\n- Maintenance: repository active; version surfaces conflict (`claim-aider-w2-status`, `claim-aider-w2-version-conflict`, `claim-aider-w2-version-tags`, `claim-aider-w2-version-package`).\r\n- Lock-in: open source and provider configuration are documented, but a formal lock-in analysis and complete cost matrix remain unknown (`claim-aider-w2-provider-auth`, `claim-aider-w2-lineage`).",
+        "claimIds": []
+      },
+      {
+        "id": "lineage-and-compatibility-edges",
+        "heading": "Lineage and compatibility edges",
+        "body": "- Lineage claims: no first-party lineage relationship to another selected product was established (`claim-aider-w2-lineage`).\r\n- Relationship edges: no new Wave 2 Aider relationship row.",
+        "claimIds": []
+      },
+      {
+        "id": "closest-substitutes-partial-substitutes-same-lineage-relatives-often-confused-products-and-complements",
+        "heading": "Closest substitutes, partial substitutes, same-lineage relatives, often-confused products, and complements",
+        "body": "- Comparison neighborhood IDs: `unknown`; no new Wave 2 neighborhood row was emitted.\r\n- Substitutes: `unknown`\r\n- Partial substitutes: `unknown`\r\n- Same-lineage relatives: `unknown`\r\n- Often-confused products: `unknown`\r\n- Complements: `unknown`",
+        "claimIds": []
+      },
+      {
+        "id": "unique-edge-meaningful-drawbacks-best-fit-and-not-for",
+        "heading": "Unique edge, meaningful drawbacks, best fit, and not-for",
+        "body": "- Unique edge: terminal pair programming with a ranked repository map and direct local Git integration across broad providers (`claim-aider-w2-unique`).\r\n- Meaningful drawbacks: weaker-model edit failures (`claim-aider-w2-drawback`) and an experimental browser UI (`claim-aider-w2-surface-browser`).\r\n- Best fit: official guidance addresses developers who want local AI pair programming against a new or existing codebase, especially a local Git repository (`claim-aider-w2-intended-user`). This is not a recommendation.\r\n- Not-for: verified native mobile, messaging, remote relay, hosted background, or parallel-agent needs remain outside the established surface set (`claim-aider-w2-not-for`).",
+        "claimIds": []
+      },
+      {
+        "id": "source-ledger-and-unresolved-contradictions",
+        "heading": "Source ledger and unresolved contradictions",
+        "body": "### Source ledger\r\n\r\n| Claim or record ID | Evidence class | Source URL | Captured/reviewed date | Status | Notes |\r\n|---|---|---|---|---|---|\r\n| `claim-aider-w2-identity` | repository-or-code | https://github.com/Aider-AI/aider | 2026-08-10 | pending-review | Canonical identity. |\r\n| `claim-aider-w2-status` | repository-or-code | https://api.github.com/repos/Aider-AI/aider | 2026-08-10 | pending-review | Active repository snapshot. |\r\n| `claim-aider-w2-version-conflict` | repository-or-code | https://api.github.com/repos/Aider-AI/aider/releases | 2026-08-10 | pending-review | Published GitHub release. |\r\n| `claim-aider-w2-version-tags` | repository-or-code | https://api.github.com/repos/Aider-AI/aider/tags | 2026-08-10 | pending-review | Repository tags. |\r\n| `claim-aider-w2-version-package` | repository-or-code | https://pypi.org/pypi/aider-chat/json | 2026-08-10 | pending-review | Package metadata. |\r\n| `claim-aider-w2-license`; `claim-aider-w2-lineage` | repository-or-code / inference | https://github.com/Aider-AI/aider/blob/main/LICENSE.txt | 2026-08-10 | pending-review | License and no inferred lineage edge. |\r\n| `claim-aider-w2-pricing` | inference | https://aider.chat/docs/llms/github.html | 2026-08-10 | pending-review | Aider-owned pricing unknown. |\r\n| `claim-aider-w2-primary-type`; `claim-aider-w2-loop-owner`; `claim-aider-w2-security-data` | inference / repository-or-code | https://github.com/Aider-AI/aider/blob/main/aider/coders/base_coder.py | 2026-08-10 | pending-review | Runtime loop, permissions, and data path. |\r\n| `claim-aider-w2-execution` | official-docs | https://aider.chat/docs/usage.html | 2026-08-10 | pending-review | Local repository execution. |\r\n| `claim-aider-w2-intended-user` | official-claim | https://aider.chat/docs/usage.html | 2026-08-10 | pending-review | Audience description only. |\r\n| `claim-aider-w2-provider-auth` | official-docs | https://aider.chat/docs/llms/other.html | 2026-08-10 | pending-review | Provider paths. |\r\n| `claim-aider-w2-model-strategy`; `claim-aider-w2-context-session` | official-docs | https://aider.chat/docs/config/options.html | 2026-08-10 | pending-review | Models, history, and context controls. |\r\n| `claim-aider-w2-tools-api` | official-docs | https://aider.chat/docs/usage/commands.html | 2026-08-10 | pending-review | Tools and commands. |\r\n| `claim-aider-w2-orchestration` | official-docs | https://aider.chat/docs/usage/modes.html | 2026-08-10 | pending-review | Sequential Architect mode. |\r\n| `claim-aider-w2-optional-docker`; `surface-aider-docker-cli` | official-docs | https://aider.chat/docs/install/docker.html | 2026-08-10 | pending-review | Optional container route. |\r\n| `claim-aider-w2-unique` | official-claim | https://github.com/Aider-AI/aider/blob/main/README.md | 2026-08-10 | pending-review | Product positioning. |\r\n| `claim-aider-w2-drawback` | official-docs | https://aider.chat/docs/llms.html | 2026-08-10 | pending-review | Model-dependent edit reliability. |\r\n| `claim-aider-w2-not-for` | inference | https://aider.chat/docs/usage.html | 2026-08-10 | pending-review | Unverified routes remain unknown. |\r\n| `claim-aider-w2-surface-cli-voice`; `surface-aider-cli`; `surface-aider-voice-cli` | official-docs | https://aider.chat/docs/usage/voice.html | 2026-08-10 | pending-review | Local CLI and voice input. |\r\n| `claim-aider-w2-surface-browser`; `surface-aider-browser-ui` | repository-or-code | https://github.com/Aider-AI/aider/blob/main/aider/gui.py | 2026-08-10 | pending-review | Experimental local browser UI. |\r\n| `claim-aider-w2-surface-watch`; `surface-aider-ide-watch` | official-docs | https://aider.chat/docs/usage/watch.html | 2026-08-10 | pending-review | IDE/editor watch route. |\r\n| `claim-aider-w2-surface-api`; `surface-aider-python-api` | official-docs | https://aider.chat/docs/scripting.html | 2026-08-10 | pending-review | Local scripting and Python API. |\r\n| `claim-aider-w2-surface-codespaces`; `surface-aider-codespaces` | official-docs | https://aider.chat/docs/install/codespaces.html | 2026-08-10 | pending-review | GitHub-managed host route. |\r\n\r\n### Unresolved contradictions\r\n\r\n- `claim-aider-w2-version-conflict`, `claim-aider-w2-version-tags`, and `claim-aider-w2-version-package` record v0.86.0 in GitHub releases, v0.86.2 and v0.86.3.dev tags, and package 0.86.2; exact stable status is unresolved.\r\n\r\nExplicit unknowns: Aider-owned pricing; default sandbox; formal security review; MCP; skills; plugins; lifecycle hooks; subagents and parallel workers; provider fallback; default model; remote resume/client/relay; mobile/mobile web/messaging/Termux; scheduler and hosted work; browser network security; voice and provider retention; lock-in; Python API stability; and lineage.\r\n\r\nCompare pointers 2026-08-17: byok supported (`claim-aider-cmp-byok`), local Ollama supported (`claim-aider-cmp-local-models`), mobile unsupported (`claim-aider-cmp-mobile`), subscription reuse unsupported (`claim-aider-cmp-subscription-reuse`), isolation unsupported (`claim-aider-cmp-isolation-unsupported`), single-agent (`claim-aider-cmp-single-agent`).\r\n\r\nCompare pointers 2026-08-17b: remote unsupported (`claim-aider-cmp-remote-unsupported`).",
+        "claimIds": []
+      },
+      {
+        "id": "last-verified-date",
+        "heading": "Last verified date",
+        "body": "`2026-08-17`",
+        "claimIds": []
+      }
+    ]
+  },
+  "claims": [
+    {
+      "claim_id": "claim-aider-cmp-byok",
+      "project_id": "aider",
+      "field": "byok",
+      "claim": "Aider documents operator-supplied provider API keys via command line, environment, .env, and YAML.",
+      "value": "supported",
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/config/api-keys.html",
+      "source_title": "Aider API Keys",
+      "captured_at": "2026-08-17",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Compare pointer byok."
+    },
+    {
+      "claim_id": "claim-aider-cmp-human-gates",
+      "project_id": "aider",
+      "field": "capability_tag",
+      "claim": "Shell confirmations; --yes-always bypass. Compare tag human-gates.",
+      "value": "human-gates",
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/config/options.html",
+      "source_title": "Aider options reference",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "current docs checked 2026-08-10",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Shell confirmations; --yes-always bypass. parent=claim-aider-w2-security-data. Maria review 2026-08-17."
+    },
+    {
+      "claim_id": "claim-aider-cmp-isolation-unsupported",
+      "project_id": "aider",
+      "field": "isolation",
+      "claim": "Aider pair-programs by editing files in a local git repo. Optional Docker is an install path, not a default OS sandbox.",
+      "value": "unsupported",
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/",
+      "source_title": "Aider Documentation",
+      "captured_at": "2026-08-17",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Compare sandbox No. Optional Docker does not count."
+    },
+    {
+      "claim_id": "claim-aider-cmp-local-models",
+      "project_id": "aider",
+      "field": "local_models",
+      "claim": "Aider documents connecting to local Ollama models with aider --model ollama_chat/<model>.",
+      "value": "supported",
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/llms/ollama.html",
+      "source_title": "Aider Ollama",
+      "captured_at": "2026-08-17",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Compare pointer local."
+    },
+    {
+      "claim_id": "claim-aider-cmp-loop-supported",
+      "project_id": "aider",
+      "field": "agent_loop_owner",
+      "claim": "Pointer to accepted claim-aider-w2-loop-owner: Aider Coder runtime. Compare enum supported.",
+      "value": "supported",
+      "evidence_class": "repository-or-code",
+      "source_url": "https://github.com/Aider-AI/aider/blob/main/aider/coders/base_coder.py",
+      "source_title": "Aider Coder runtime source",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "main branch",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "draft-from-existing parent=claim-aider-w2-loop-owner. Promoted 2026-08-17 as accepted pointer. Wave 2 / site-fill parent accepted."
+    },
+    {
+      "claim_id": "claim-aider-cmp-mobile",
+      "project_id": "aider",
+      "field": "mobile",
+      "claim": "Opened first-party Aider docs name terminal, optional browser UI, IDE watch, Docker, and Codespaces. No official iOS or Android Aider app is listed.",
+      "value": "unsupported",
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/",
+      "source_title": "Aider Documentation",
+      "captured_at": "2026-08-17",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Compare pointer mobile. Browser UI is not a native app."
+    },
+    {
+      "claim_id": "claim-aider-cmp-remote-unsupported",
+      "project_id": "aider",
+      "field": "remote_access",
+      "claim": "Opened first-party Aider docs name terminal, optional local browser UI, IDE watch, Docker, Codespaces, and Replit install hosts. They do not document remote-control of a running Aider session from another device.",
+      "value": "unsupported",
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/",
+      "source_title": "Aider Documentation",
+      "captured_at": "2026-08-17",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Compare remote No. Codespaces/Replit are install hosts, not remote-control."
+    },
+    {
+      "claim_id": "claim-aider-cmp-single-agent",
+      "project_id": "aider",
+      "field": "capability_tag",
+      "claim": "Aider is documented as AI pair programming in your terminal: one coding agent in the local repo.",
+      "value": "single-agent",
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/",
+      "source_title": "Aider Documentation",
+      "captured_at": "2026-08-17",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Compare multi No."
+    },
+    {
+      "claim_id": "claim-aider-cmp-subscription-reuse",
+      "project_id": "aider",
+      "field": "subscription_reuse",
+      "claim": "Opened first-party Aider pages document API keys for OpenAI and other providers. They do not document ChatGPT Plus, Claude Pro, or other consumer-plan login as an Aider auth path.",
+      "value": "unsupported",
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/llms/openai.html",
+      "source_title": "Aider OpenAI",
+      "captured_at": "2026-08-17",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Compare pointer sub. Not ChatGPT Plus."
+    },
+    {
+      "claim_id": "claim-aider-gf-aider-data-path-analytics",
+      "project_id": "aider",
+      "field": "data_path",
+      "claim": "The analytics page says collection is opt-in, never includes code, chat messages, keys, or personal info, and can be permanently disabled with aider --analytics-disable.",
+      "value": "{\"opt_in\":true,\"collects_code_or_chats\":false,\"disable\":\"--analytics-disable\"}",
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/more/analytics.html",
+      "source_title": "Analytics | aider",
+      "captured_at": "2026-08-16",
+      "product_version_or_date": "page checked 2026-08-16",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Page also documents optional --analytics-log and custom PostHog host/key. Provider model-call path is not established on this page."
+    },
+    {
+      "claim_id": "claim-aider-gf-aider-data-path-privacy",
+      "project_id": "aider",
+      "field": "data_path",
+      "claim": "The privacy policy says Aider AI LLC may collect device and usage data and analytics associated with a randomly generated identifier, and that the Services are hosted in the United States.",
+      "value": "{\"operator\":\"Aider AI LLC\",\"analytics_id\":\"random identifier\",\"hosted_in\":\"United States\",\"last_updated\":\"2025-04-12\"}",
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/legal/privacy.html",
+      "source_title": "Privacy policy | aider",
+      "captured_at": "2026-08-16",
+      "product_version_or_date": "Last updated April 12, 2025",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Policy also says the Services are intended for US visitors. This page does not mention collecting code or chat contents; that is an absence on this page, not a denial. The opt-in framing belongs to the separate analytics page and is recorded in aider-data-path-analytics; this page uses opt-out wording."
+    },
+    {
+      "claim_id": "claim-aider-gf-aider-history-main-unreleased",
+      "project_id": "aider",
+      "field": "version",
+      "claim": "The official release-history page lists published notes through Aider v0.86.1 and a separate main-branch section with later model work that is not a GitHub release.",
+      "value": "{\"latest_named_release_on_page\":\"Aider v0.86.1\",\"unreleased_section\":\"main branch\"}",
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/HISTORY.html",
+      "source_title": "Release history | aider",
+      "captured_at": "2026-08-16",
+      "product_version_or_date": "HISTORY.html checked 2026-08-16",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Main-branch bullets name Claude 4.5/4.6, Gemini 3 preview, and GPT-5.x settings. That is changelog copy, not a published tag."
+    },
+    {
+      "claim_id": "claim-aider-gf-aider-maintenance-pushed",
+      "project_id": "aider",
+      "field": "maintenance",
+      "claim": "GitHub repository metadata reports pushed_at 2026-05-22T14:02:20Z for the canonical repository.",
+      "value": "{\"pushed_at\":\"2026-05-22T14:02:20Z\"}",
+      "evidence_class": "repository-or-code",
+      "source_url": "https://api.github.com/repos/Aider-AI/aider",
+      "source_title": "GitHub repository metadata for Aider",
+      "captured_at": "2026-08-16",
+      "product_version_or_date": "repository metadata as of 2026-08-16",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Narrowed per review to pushed_at; the archived and disabled values are already canonical in claim-aider-w2-status. Last push is later than the latest GitHub release. This does not by itself clear the dormant status claim."
+    },
+    {
+      "claim_id": "claim-aider-identity",
+      "project_id": "aider",
+      "field": "identity",
+      "claim": "Aider identity is resolved.",
+      "value": "Aider",
+      "evidence_class": "repository-or-code",
+      "source_url": "https://github.com/Aider-AI/aider",
+      "source_title": "Aider repository",
+      "captured_at": "2026-08-09",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "unreviewed",
+      "notes": ""
+    },
+    {
+      "claim_id": "claim-aider-lc1-status",
+      "project_id": "aider",
+      "field": "status",
+      "claim": "Aider is dormant: maintainer activity paused, tracked publicly in issue 4613; the repository is not archived.",
+      "value": "dormant",
+      "evidence_class": "repository-or-code",
+      "source_url": "https://github.com/Aider-AI/aider/issues/4613",
+      "source_title": "Aider issue #4613",
+      "captured_at": "2026-08-15",
+      "product_version_or_date": "unknown",
+      "confidence": "medium",
+      "reviewer_status": "unreviewed",
+      "notes": "Applied from Maria-approved 2026-08-15 landscape-vs-corpus checklist."
+    },
+    {
+      "claim_id": "claim-aider-sf-dormant-2026-08-15",
+      "project_id": "aider",
+      "field": "status",
+      "claim": "Aider is dormant: latest GitHub release remains v0.86.0 (2025-08-09); maintainer said on 2025-10-30 he was occupied with other projects; PyPI later published 0.86.2 on 2026-02-12. Not archived.",
+      "value": "dormant ~6 months; not archived",
+      "evidence_class": "repository-or-code",
+      "source_url": "https://github.com/Aider-AI/aider/issues/4613",
+      "source_title": "Aider issue 4613 Where is Paul",
+      "captured_at": "2026-08-15",
+      "product_version_or_date": "v0.86.0 GitHub; 0.86.2 PyPI 2026-02-12",
+      "confidence": "high",
+      "reviewer_status": "unreviewed",
+      "notes": "Landscape v3.2. Keep the 2026-08-10 not-archived snapshot as a dated observation."
+    },
+    {
+      "claim_id": "claim-aider-w2-context-session",
+      "project_id": "aider",
+      "field": "session_behavior",
+      "claim": "Aider combines a ranked repository map, local history files, optional restore, context controls, and ChatSummary compaction.",
+      "value": [
+        "repository map",
+        "local history",
+        "restore",
+        "context controls",
+        "compaction"
+      ],
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/config/options.html",
+      "source_title": "Aider options reference",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Separate durable project memory is unknown."
+    },
+    {
+      "claim_id": "claim-aider-w2-drawback",
+      "project_id": "aider",
+      "field": "drawback",
+      "claim": "Weaker models may fail to produce applicable edits.",
+      "value": [
+        "model-dependent edit reliability"
+      ],
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/llms.html",
+      "source_title": "Aider Connecting to LLMs documentation",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Browser UI status is recorded by claim-aider-w2-surface-browser."
+    },
+    {
+      "claim_id": "claim-aider-w2-execution",
+      "project_id": "aider",
+      "field": "execution_location",
+      "claim": "Normal Aider work edits a local code repository.",
+      "value": "local repository execution",
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/usage.html",
+      "source_title": "Aider usage documentation",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Repository-root shell behavior is not asserted; Docker and Codespaces are separate."
+    },
+    {
+      "claim_id": "claim-aider-w2-identity",
+      "project_id": "aider",
+      "field": "identity",
+      "claim": "The canonical project is Aider from Aider AI LLC.",
+      "value": "Aider",
+      "evidence_class": "repository-or-code",
+      "source_url": "https://github.com/Aider-AI/aider",
+      "source_title": "Aider canonical GitHub repository",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "unreviewed",
+      "notes": "Stable identity retained."
+    },
+    {
+      "claim_id": "claim-aider-w2-intended-user",
+      "project_id": "aider",
+      "field": "intended_user",
+      "claim": "Aider is documented for developers who want local AI pair programming against a new or existing codebase, especially a local Git repository.",
+      "value": "developers working in local code repositories",
+      "evidence_class": "official-claim",
+      "source_url": "https://aider.chat/docs/usage.html",
+      "source_title": "Aider usage documentation",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Audience description only."
+    },
+    {
+      "claim_id": "claim-aider-w2-license",
+      "project_id": "aider",
+      "field": "license",
+      "claim": "Aider uses Apache-2.0.",
+      "value": "Apache-2.0",
+      "evidence_class": "repository-or-code",
+      "source_url": "https://github.com/Aider-AI/aider/blob/main/LICENSE.txt",
+      "source_title": "Aider Apache License 2.0 text",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "main branch",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Repository license."
+    },
+    {
+      "claim_id": "claim-aider-w2-lineage",
+      "project_id": "aider",
+      "field": "lineage",
+      "claim": "No first-party lineage relationship to another selected product was established.",
+      "value": "unknown",
+      "evidence_class": "inference",
+      "source_url": "https://github.com/Aider-AI/aider/blob/main/LICENSE.txt",
+      "source_title": "Aider Apache License 2.0 text",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "main branch",
+      "confidence": "unknown",
+      "reviewer_status": "accepted",
+      "notes": "No relationship emitted."
+    },
+    {
+      "claim_id": "claim-aider-w2-loop-owner",
+      "project_id": "aider",
+      "field": "agent_loop_owner",
+      "claim": "Aider Coder assembles context, calls the model, applies edits, can lint or test, runs approved shell work, and records Git commits.",
+      "value": "Aider Coder runtime",
+      "evidence_class": "repository-or-code",
+      "source_url": "https://github.com/Aider-AI/aider/blob/main/aider/coders/base_coder.py",
+      "source_title": "Aider Coder runtime source",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "main branch",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Local side effects remain Aider-owned."
+    },
+    {
+      "claim_id": "claim-aider-w2-model-strategy",
+      "project_id": "aider",
+      "field": "model_strategy",
+      "claim": "Aider supports main, weak, and editor models, aliases, in-chat switching, reasoning effort, and thinking-token controls.",
+      "value": [
+        "main",
+        "weak",
+        "editor",
+        "aliases",
+        "switching",
+        "reasoning effort",
+        "thinking tokens"
+      ],
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/config/options.html",
+      "source_title": "Aider options reference",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Weak model is not fallback."
+    },
+    {
+      "claim_id": "claim-aider-w2-not-for",
+      "project_id": "aider",
+      "field": "not_for",
+      "claim": "Native mobile, mobile web, messaging, vendor relay, remote client, scheduler, hosted background work, subagents, and parallel workers were not established.",
+      "value": "unknown for listed remote, mobile, messaging, and orchestration routes",
+      "evidence_class": "inference",
+      "source_url": "https://aider.chat/docs/usage.html",
+      "source_title": "Aider usage documentation",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "unknown",
+      "confidence": "unknown",
+      "reviewer_status": "accepted",
+      "notes": "Unknown is not unsupported."
+    },
+    {
+      "claim_id": "claim-aider-w2-optional-docker",
+      "project_id": "aider",
+      "field": "isolation",
+      "claim": "Aider documents optional Docker execution with the repository mapped into the container.",
+      "value": "optional Docker route",
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/install/docker.html",
+      "source_title": "Aider Docker documentation",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Not the default boundary."
+    },
+    {
+      "claim_id": "claim-aider-w2-orchestration",
+      "project_id": "aider",
+      "field": "orchestration",
+      "claim": "Architect mode uses a sequential architect request followed by an editor request.",
+      "value": "sequential two-model architect/editor flow",
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/usage/modes.html",
+      "source_title": "Aider chat modes documentation",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Not parallel agents."
+    },
+    {
+      "claim_id": "claim-aider-w2-pricing",
+      "project_id": "aider",
+      "field": "pricing",
+      "claim": "No separate Aider-owned subscription price was established; provider and Copilot costs are external.",
+      "value": {
+        "aider_owned_price": "unknown",
+        "provider_costs": "external"
+      },
+      "evidence_class": "inference",
+      "source_url": "https://aider.chat/docs/llms/github.html",
+      "source_title": "Aider GitHub Copilot documentation",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "unknown",
+      "confidence": "medium",
+      "reviewer_status": "accepted",
+      "notes": "Absence is unknown, not free."
+    },
+    {
+      "claim_id": "claim-aider-w2-primary-type",
+      "project_id": "aider",
+      "field": "primary_type",
+      "claim": "Aider is a runtime because its Coder owns the model-to-edit-to-file loop.",
+      "value": "runtime",
+      "evidence_class": "inference",
+      "source_url": "https://github.com/Aider-AI/aider/blob/main/aider/coders/base_coder.py",
+      "source_title": "Aider Coder runtime source",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "main branch",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Model supplies completions."
+    },
+    {
+      "claim_id": "claim-aider-w2-provider-auth",
+      "project_id": "aider",
+      "field": "provider_support",
+      "claim": "Aider uses LiteLLM and documents broad provider choice, OpenAI-compatible endpoints, OpenAI, Anthropic, and Ollama.",
+      "value": [
+        "LiteLLM",
+        "OpenAI-compatible",
+        "OpenAI",
+        "Anthropic",
+        "Ollama"
+      ],
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/llms/other.html",
+      "source_title": "Aider Other LLMs documentation",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Credentials are user supplied."
+    },
+    {
+      "claim_id": "claim-aider-w2-security-data",
+      "project_id": "aider",
+      "field": "security",
+      "claim": "Aider asks for shell and out-of-chat file changes, offers dry-run and Git controls, and sends assembled context to the configured LiteLLM endpoint.",
+      "value": [
+        "confirmations",
+        "dry-run",
+        "Git controls",
+        "provider data path"
+      ],
+      "evidence_class": "repository-or-code",
+      "source_url": "https://github.com/Aider-AI/aider/blob/main/aider/coders/base_coder.py",
+      "source_title": "Aider Coder runtime source",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "main branch",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "No default built-in sandbox established."
+    },
+    {
+      "claim_id": "claim-aider-w2-status",
+      "project_id": "aider",
+      "field": "status",
+      "claim": "The canonical repository was not archived or disabled at capture.",
+      "value": {
+        "archived": false,
+        "disabled": false
+      },
+      "evidence_class": "repository-or-code",
+      "source_url": "https://api.github.com/repos/Aider-AI/aider",
+      "source_title": "GitHub repository metadata for Aider",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "repository metadata as of 2026-08-10",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Current activity snapshot."
+    },
+    {
+      "claim_id": "claim-aider-w2-surface-api",
+      "project_id": "aider",
+      "field": "api",
+      "claim": "Aider supports one-shot CLI scripting and a local Python Coder API.",
+      "value": [
+        "--message",
+        "Python Coder API"
+      ],
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/scripting.html",
+      "source_title": "Aider scripting documentation",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "No hosted API."
+    },
+    {
+      "claim_id": "claim-aider-w2-surface-browser",
+      "project_id": "aider",
+      "field": "surface",
+      "claim": "The experimental Streamlit browser UI edits the local repository and changes normal confirmation behavior.",
+      "value": "local experimental browser UI",
+      "evidence_class": "repository-or-code",
+      "source_url": "https://github.com/Aider-AI/aider/blob/main/aider/gui.py",
+      "source_title": "Aider Streamlit browser GUI source",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "main branch",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "No public exposure model established."
+    },
+    {
+      "claim_id": "claim-aider-w2-surface-cli-voice",
+      "project_id": "aider",
+      "field": "surface",
+      "claim": "Aider has a local terminal CLI and a voice-input mode that uses OpenAI transcription.",
+      "value": [
+        "terminal CLI",
+        "voice CLI"
+      ],
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/usage/voice.html",
+      "source_title": "Aider voice-to-code documentation",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Voice is not mobile or messaging."
+    },
+    {
+      "claim_id": "claim-aider-w2-surface-codespaces",
+      "project_id": "aider",
+      "field": "surface",
+      "claim": "Aider documents use in the built-in terminal of GitHub Codespaces.",
+      "value": "Codespaces terminal",
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/install/codespaces.html",
+      "source_title": "Aider GitHub Codespaces documentation",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "GitHub manages the host."
+    },
+    {
+      "claim_id": "claim-aider-w2-surface-watch",
+      "project_id": "aider",
+      "field": "surface",
+      "claim": "Watch mode responds to AI comments placed in repository files by an IDE or editor.",
+      "value": "IDE/editor watch mode",
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/usage/watch.html",
+      "source_title": "Aider IDE/editor watch documentation",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Aider remains the local runtime."
+    },
+    {
+      "claim_id": "claim-aider-w2-tools-api",
+      "project_id": "aider",
+      "field": "tools",
+      "claim": "Tools cover files, repository map, Git, shell, tests, lint, web scrape, images, voice, diffs, undo, watch mode, and scripting.",
+      "value": [
+        "files",
+        "repo map",
+        "Git",
+        "shell",
+        "tests",
+        "lint",
+        "web",
+        "images",
+        "voice",
+        "diff",
+        "undo",
+        "watch",
+        "scripting"
+      ],
+      "evidence_class": "official-docs",
+      "source_url": "https://aider.chat/docs/usage/commands.html",
+      "source_title": "Aider in-chat commands documentation",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "unknown",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "MCP, skills, plugins, and lifecycle hooks remain unknown."
+    },
+    {
+      "claim_id": "claim-aider-w2-unique",
+      "project_id": "aider",
+      "field": "unique_value",
+      "claim": "Aider emphasizes terminal pair programming, a ranked repository map, local file and Git integration, and broad providers.",
+      "value": [
+        "terminal pair programming",
+        "repository map",
+        "local Git",
+        "provider breadth"
+      ],
+      "evidence_class": "official-claim",
+      "source_url": "https://github.com/Aider-AI/aider/blob/main/README.md",
+      "source_title": "Aider repository README",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "main branch",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "No ranking."
+    },
+    {
+      "claim_id": "claim-aider-w2-version-conflict",
+      "project_id": "aider",
+      "field": "version",
+      "claim": "The GitHub releases API returned Aider v0.86.0 as the latest published release at capture.",
+      "value": {
+        "tag": "v0.86.0",
+        "published_at": "2025-08-09"
+      },
+      "evidence_class": "repository-or-code",
+      "source_url": "https://api.github.com/repos/Aider-AI/aider/releases",
+      "source_title": "Aider GitHub releases API",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "v0.86.0",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Published GitHub release only; repository tags and package metadata are ledgered separately."
+    },
+    {
+      "claim_id": "claim-aider-w2-version-package",
+      "project_id": "aider",
+      "field": "version",
+      "claim": "The aider-chat package metadata reported version 0.86.2 with an upload timestamp of 2026-02-12.",
+      "value": {
+        "version": "0.86.2",
+        "upload_time": "2026-02-12T00:42:54.835777Z"
+      },
+      "evidence_class": "repository-or-code",
+      "source_url": "https://pypi.org/pypi/aider-chat/json",
+      "source_title": "aider-chat package metadata",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "0.86.2",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Package metadata is distinct from GitHub releases and repository tags."
+    },
+    {
+      "claim_id": "claim-aider-w2-version-tags",
+      "project_id": "aider",
+      "field": "version",
+      "claim": "Canonical Aider repository tags included v0.86.2 and v0.86.3.dev at capture.",
+      "value": [
+        "v0.86.2",
+        "v0.86.3.dev"
+      ],
+      "evidence_class": "repository-or-code",
+      "source_url": "https://api.github.com/repos/Aider-AI/aider/tags",
+      "source_title": "Aider Git tags API",
+      "captured_at": "2026-08-10",
+      "product_version_or_date": "v0.86.2; v0.86.3.dev",
+      "confidence": "high",
+      "reviewer_status": "accepted",
+      "notes": "Repository tags are distinct from the published-release list."
+    }
+  ],
+  "relationships": [
+    {
+      "source_id": "coder",
+      "edge": "orchestrates",
+      "target_id": "aider",
+      "evidence_claim_id": "claim-coder-nw-orchestrates-aider",
+      "captured_at": "2026-08-16",
+      "confidence": "high"
+    }
+  ],
+  "surfaces": [
+    {
+      "project_id": "aider",
+      "surface_id": "surface-aider-browser-ui",
+      "surface_name": "Aider experimental browser UI",
+      "surface_owner": "first-party",
+      "interface_type": "web-app",
+      "client_platform": "browser",
+      "agent_host": "same-device",
+      "connection_path": "local",
+      "remote_start": "unknown",
+      "remote_resume": "unknown",
+      "approve_actions": "unknown",
+      "inspect_tools": "supported",
+      "session_continuity": "supported",
+      "official_support": "supported",
+      "evidence_claim_id": "claim-aider-w2-surface-browser",
+      "captured_at": "2026-08-10",
+      "notes": "Local Streamlit UI; public exposure and mobile support are not established."
+    },
+    {
+      "project_id": "aider",
+      "surface_id": "surface-aider-cli",
+      "surface_name": "Aider terminal CLI",
+      "surface_owner": "first-party",
+      "interface_type": "cli",
+      "client_platform": "terminal",
+      "agent_host": "same-device",
+      "connection_path": "local",
+      "remote_start": "unknown",
+      "remote_resume": "unknown",
+      "approve_actions": "supported",
+      "inspect_tools": "supported",
+      "session_continuity": "supported",
+      "official_support": "supported",
+      "evidence_claim_id": "claim-aider-w2-surface-cli-voice",
+      "captured_at": "2026-08-10",
+      "notes": "Primary local runtime."
+    },
+    {
+      "project_id": "aider",
+      "surface_id": "surface-aider-codespaces",
+      "surface_name": "Aider in GitHub Codespaces terminal",
+      "surface_owner": "first-party",
+      "interface_type": "cli",
+      "client_platform": "terminal",
+      "agent_host": "vendor-cloud",
+      "connection_path": "local",
+      "remote_start": "unknown",
+      "remote_resume": "unknown",
+      "approve_actions": "supported",
+      "inspect_tools": "supported",
+      "session_continuity": "unknown",
+      "official_support": "supported",
+      "evidence_claim_id": "claim-aider-w2-surface-codespaces",
+      "captured_at": "2026-08-10",
+      "notes": "GitHub supplies the host; this is not an Aider relay."
+    },
+    {
+      "project_id": "aider",
+      "surface_id": "surface-aider-docker-cli",
+      "surface_name": "Aider CLI in Docker",
+      "surface_owner": "first-party",
+      "interface_type": "cli",
+      "client_platform": "terminal",
+      "agent_host": "same-device",
+      "connection_path": "local",
+      "remote_start": "unknown",
+      "remote_resume": "unknown",
+      "approve_actions": "supported",
+      "inspect_tools": "supported",
+      "session_continuity": "unknown",
+      "official_support": "supported",
+      "evidence_claim_id": "claim-aider-w2-optional-docker",
+      "captured_at": "2026-08-10",
+      "notes": "Optional container route with mapped repository."
+    },
+    {
+      "project_id": "aider",
+      "surface_id": "surface-aider-ide-watch",
+      "surface_name": "Aider IDE and editor watch mode",
+      "surface_owner": "first-party",
+      "interface_type": "ide",
+      "client_platform": "ide",
+      "agent_host": "same-device",
+      "connection_path": "local",
+      "remote_start": "unknown",
+      "remote_resume": "unknown",
+      "approve_actions": "unknown",
+      "inspect_tools": "supported",
+      "session_continuity": "supported",
+      "official_support": "supported",
+      "evidence_claim_id": "claim-aider-w2-surface-watch",
+      "captured_at": "2026-08-10",
+      "notes": "The IDE writes AI comments; Aider remains the runtime."
+    },
+    {
+      "project_id": "aider",
+      "surface_id": "surface-aider-python-api",
+      "surface_name": "Aider Python scripting API",
+      "surface_owner": "first-party",
+      "interface_type": "api",
+      "client_platform": "terminal",
+      "agent_host": "same-device",
+      "connection_path": "local",
+      "remote_start": "unknown",
+      "remote_resume": "unknown",
+      "approve_actions": "unknown",
+      "inspect_tools": "supported",
+      "session_continuity": "unknown",
+      "official_support": "supported",
+      "evidence_claim_id": "claim-aider-w2-surface-api",
+      "captured_at": "2026-08-10",
+      "notes": "Local embedding; no hosted API."
+    },
+    {
+      "project_id": "aider",
+      "surface_id": "surface-aider-voice-cli",
+      "surface_name": "Aider voice-enabled CLI",
+      "surface_owner": "first-party",
+      "interface_type": "cli",
+      "client_platform": "terminal",
+      "agent_host": "same-device",
+      "connection_path": "local",
+      "remote_start": "unknown",
+      "remote_resume": "unknown",
+      "approve_actions": "supported",
+      "inspect_tools": "supported",
+      "session_continuity": "supported",
+      "official_support": "supported",
+      "evidence_claim_id": "claim-aider-w2-surface-cli-voice",
+      "captured_at": "2026-08-10",
+      "notes": "Voice is input to the CLI, not a mobile route."
+    }
+  ]
+}

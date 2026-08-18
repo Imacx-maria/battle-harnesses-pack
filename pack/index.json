@@ -1,0 +1,614 @@
+{
+  "pack_version": "2026-08-18+340a252a",
+  "generated_at": "2026-08-18T00:00:00.000Z",
+  "generator": "generate-corpus-pack.mjs 1.2.0",
+  "vocab_version": 2,
+  "condition_vocabulary": [
+    {
+      "key": "machines",
+      "values": [
+        "1",
+        "many",
+        "split"
+      ],
+      "definition": "How many machines the person develops on; split = the modal work+home divide"
+    },
+    {
+      "key": "subs",
+      "values": [
+        "none",
+        "one",
+        "several"
+      ],
+      "definition": "Paid AI subscriptions currently held"
+    },
+    {
+      "key": "byok",
+      "values": [
+        "yes",
+        "no"
+      ],
+      "definition": "Willing to bring their own API key"
+    },
+    {
+      "key": "cloud",
+      "values": [
+        "yes",
+        "no"
+      ],
+      "definition": "Willing to have agents execute on machines they don't own"
+    },
+    {
+      "key": "data",
+      "values": [
+        "sensitive",
+        "indifferent"
+      ],
+      "definition": "Whether their code/content may be processed or trained on by third parties beyond chosen inference; vendor relays on the path fold into this"
+    },
+    {
+      "key": "local_inference",
+      "values": [
+        "viable",
+        "not",
+        "unknown"
+      ],
+      "definition": "Whether this machine can usefully run local models — replaces hardware:weak|strong (unmatchable without workload)"
+    },
+    {
+      "key": "oss",
+      "values": [
+        "required",
+        "indifferent"
+      ],
+      "definition": "Open-source requirement for tooling"
+    },
+    {
+      "key": "agent_tenure",
+      "values": [
+        "new",
+        "established"
+      ],
+      "definition": "How long they've been using agentic tools — replaces experience:junior|senior (person-grading; flattery/insult magnet)"
+    },
+    {
+      "key": "os",
+      "values": [
+        "windows",
+        "macos",
+        "linux",
+        "multiple"
+      ],
+      "definition": "Operating system(s) — both rounds independently: council S7 and judged seats grok/sol/opus (gates conductor macOS-only, four products' sandboxing)"
+    },
+    {
+      "key": "team",
+      "values": [
+        "solo",
+        "team"
+      ],
+      "definition": "Working alone or under org-grade requirements (SSO/SCIM/RBAC, policy push, seat pricing) — resolves O8: condition, not narrative-only"
+    },
+    {
+      "key": "unattended",
+      "values": [
+        "supervised",
+        "walk-away"
+      ],
+      "definition": "Whether agents run beyond supervision (opus's two-value form; grok's duration split rejected as too granular)"
+    },
+    {
+      "key": "repo-host",
+      "values": [
+        "github",
+        "gitlab",
+        "self-hosted",
+        "other"
+      ],
+      "definition": "Where repos live — hard-gates GitHub-hosted-only cloud agents"
+    },
+    {
+      "key": "risk",
+      "values": [
+        "trusted",
+        "untrusted"
+      ],
+      "definition": "Whether the code being worked on is trusted or untrusted/third-party — enables the untrusted-repo scenario"
+    }
+  ],
+  "judged_version": "2026-08-17+no-s1s10",
+  "counts": {
+    "products": 36,
+    "claims_total": 4124,
+    "claims_included": 3527,
+    "relationships": 76,
+    "surfaces": 378,
+    "neighborhoods": 1
+  },
+  "products": [
+    {
+      "id": "aider",
+      "name": "Aider",
+      "file": "products/aider.json",
+      "claims_count": 43
+    },
+    {
+      "id": "amp",
+      "name": "Amp",
+      "file": "products/amp.json",
+      "claims_count": 114
+    },
+    {
+      "id": "atomic",
+      "name": "Atomic",
+      "file": "products/atomic.json",
+      "claims_count": 79
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "file": "products/claude-code.json",
+      "claims_count": 55
+    },
+    {
+      "id": "cline",
+      "name": "Cline",
+      "file": "products/cline.json",
+      "claims_count": 112
+    },
+    {
+      "id": "codex-family",
+      "name": "Codex family",
+      "file": "products/codex-family.json",
+      "claims_count": 52
+    },
+    {
+      "id": "conductor",
+      "name": "Conductor",
+      "file": "products/conductor.json",
+      "claims_count": 120
+    },
+    {
+      "id": "crush",
+      "name": "Crush",
+      "file": "products/crush.json",
+      "claims_count": 95
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "file": "products/cursor.json",
+      "claims_count": 164
+    },
+    {
+      "id": "deepseek-harness",
+      "name": "DeepSeek Harness",
+      "file": "products/deepseek-harness.json",
+      "claims_count": 98
+    },
+    {
+      "id": "devin",
+      "name": "Devin",
+      "file": "products/devin.json",
+      "claims_count": 145
+    },
+    {
+      "id": "factory-droids",
+      "name": "Factory Droids",
+      "file": "products/factory-droids.json",
+      "claims_count": 128
+    },
+    {
+      "id": "gemini-cli",
+      "name": "Gemini CLI",
+      "file": "products/gemini-cli.json",
+      "claims_count": 48
+    },
+    {
+      "id": "github-copilot",
+      "name": "GitHub Copilot",
+      "file": "products/github-copilot.json",
+      "claims_count": 107
+    },
+    {
+      "id": "google-antigravity",
+      "name": "Google Antigravity",
+      "file": "products/google-antigravity.json",
+      "claims_count": 130
+    },
+    {
+      "id": "goose",
+      "name": "Goose",
+      "file": "products/goose.json",
+      "claims_count": 54
+    },
+    {
+      "id": "grok-build",
+      "name": "Grok Build",
+      "file": "products/grok-build.json",
+      "claims_count": 109
+    },
+    {
+      "id": "hermes-agent",
+      "name": "Hermes Agent",
+      "file": "products/hermes-agent.json",
+      "claims_count": 49
+    },
+    {
+      "id": "jules",
+      "name": "Jules",
+      "file": "products/jules.json",
+      "claims_count": 75
+    },
+    {
+      "id": "kilo-code",
+      "name": "Kilo Code",
+      "file": "products/kilo-code.json",
+      "claims_count": 140
+    },
+    {
+      "id": "kimi-code",
+      "name": "Kimi Code",
+      "file": "products/kimi-code.json",
+      "claims_count": 203
+    },
+    {
+      "id": "kiro",
+      "name": "Kiro",
+      "file": "products/kiro.json",
+      "claims_count": 147
+    },
+    {
+      "id": "minimax-code",
+      "name": "MiniMax Code",
+      "file": "products/minimax-code.json",
+      "claims_count": 52
+    },
+    {
+      "id": "mistral-vibe",
+      "name": "Mistral Vibe",
+      "file": "products/mistral-vibe.json",
+      "claims_count": 138
+    },
+    {
+      "id": "muse-code",
+      "name": "Muse Code",
+      "file": "products/muse-code.json",
+      "claims_count": 39
+    },
+    {
+      "id": "oh-my-pi",
+      "name": "Oh My Pi",
+      "file": "products/oh-my-pi.json",
+      "claims_count": 85
+    },
+    {
+      "id": "openclaw",
+      "name": "OpenClaw",
+      "file": "products/openclaw.json",
+      "claims_count": 50
+    },
+    {
+      "id": "opencode",
+      "name": "OpenCode",
+      "file": "products/opencode.json",
+      "claims_count": 54
+    },
+    {
+      "id": "openhands",
+      "name": "OpenHands",
+      "file": "products/openhands.json",
+      "claims_count": 149
+    },
+    {
+      "id": "pi",
+      "name": "Pi",
+      "file": "products/pi.json",
+      "claims_count": 72
+    },
+    {
+      "id": "prime-agent",
+      "name": "Prime Agent",
+      "file": "products/prime-agent.json",
+      "claims_count": 83
+    },
+    {
+      "id": "qwen-code",
+      "name": "Qwen Code",
+      "file": "products/qwen-code.json",
+      "claims_count": 126
+    },
+    {
+      "id": "replit-agent",
+      "name": "Replit Agent",
+      "file": "products/replit-agent.json",
+      "claims_count": 104
+    },
+    {
+      "id": "symphony",
+      "name": "Symphony",
+      "file": "products/symphony.json",
+      "claims_count": 71
+    },
+    {
+      "id": "t3-code",
+      "name": "T3 Code",
+      "file": "products/t3-code.json",
+      "claims_count": 119
+    },
+    {
+      "id": "zcode",
+      "name": "ZCode",
+      "file": "products/zcode.json",
+      "claims_count": 118
+    }
+  ],
+  "files": [
+    {
+      "path": "contradictions.json",
+      "bytes": 37844,
+      "sha256": "8e784fccddd2af51782cb62c7bf0289b65e5abda448b7f18719d30d00c722656"
+    },
+    {
+      "path": "index.json",
+      "bytes": 15987,
+      "sha256": null
+    },
+    {
+      "path": "judged/errata.md",
+      "bytes": 10525,
+      "sha256": "7ca8365a276c651c9f0b3e19977a35783c1da205d52500ca7e9577cf5c2a257f"
+    },
+    {
+      "path": "judged/judged.md",
+      "bytes": 19915,
+      "sha256": "3420f07bbd2ae7a6a716cb00ba3be849f1bc9ae1057dce1bff87aa35a32ea01e"
+    },
+    {
+      "path": "judged/README.md",
+      "bytes": 419,
+      "sha256": "a6320f7b797f1cc46953966d5cb4ced394b8e03fab23e989c169ae53d094d31e"
+    },
+    {
+      "path": "neighborhoods.json",
+      "bytes": 2991,
+      "sha256": "83b07cdc04b69466fd7f693050b2af897233166471ca9a464f510363b7feb449"
+    },
+    {
+      "path": "products/aider.json",
+      "bytes": 53165,
+      "sha256": "0d7b722f98139ef0f11b1cce95e00e9ebd6dbe6b582fe20152948549c7d94925"
+    },
+    {
+      "path": "products/amp.json",
+      "bytes": 110958,
+      "sha256": "fef0eda6f64ccb4a2c8a2d829141fe14971e658f55feba837dbb247352e7390f"
+    },
+    {
+      "path": "products/atomic.json",
+      "bytes": 90877,
+      "sha256": "4a400a661ca297a307a707bb52bfab542dafff35821707e56862207d8e4c3327"
+    },
+    {
+      "path": "products/claude-code.json",
+      "bytes": 98504,
+      "sha256": "974214973e0ce38e26a95a93a62f8e155625f4707eba110ed7a63aaa2f57b89b"
+    },
+    {
+      "path": "products/cline.json",
+      "bytes": 116824,
+      "sha256": "8d47d8f5c099bd01732516a376c3b9b78e89b164fcc26ca0429bbd1dece9954c"
+    },
+    {
+      "path": "products/codex-family.json",
+      "bytes": 88760,
+      "sha256": "f61d81ed19929ad7c5f7aebc13f1574231aa233cb472f32bc5f499275f8bed0d"
+    },
+    {
+      "path": "products/conductor.json",
+      "bytes": 131472,
+      "sha256": "830996bcd5a30df36d8fc70730e93e29a5cf5a2e2cad61562db7752b0d224e6f"
+    },
+    {
+      "path": "products/crush.json",
+      "bytes": 95332,
+      "sha256": "13959bfa8cb2ccab10df76576060fb8d7f37f7e80aa1d1c98cc8305e0ae309a3"
+    },
+    {
+      "path": "products/cursor.json",
+      "bytes": 168146,
+      "sha256": "6adab5912dd91017d70b3b2828b0dcabc9567292d2ee84ab57c5b8e91e821c4a"
+    },
+    {
+      "path": "products/deepseek-harness.json",
+      "bytes": 109159,
+      "sha256": "fd23d6575c28156cec4aafd7f72b9bddec4ba25bfddce0ed4434c739fa40cd35"
+    },
+    {
+      "path": "products/devin.json",
+      "bytes": 132402,
+      "sha256": "45e928904ab1f393c4ae97900c1b8529d0c152db1b1e375b6b80b07f5aa83fc1"
+    },
+    {
+      "path": "products/factory-droids.json",
+      "bytes": 135223,
+      "sha256": "72b66d8c2bf96991be0551ea6eb721362730c4c764d2b86c194c93c224f5be01"
+    },
+    {
+      "path": "products/gemini-cli.json",
+      "bytes": 65100,
+      "sha256": "0e1958ab1f5f2b6fa906b901f62d93cb667c511ef9b3a1fe9f90d2c5420ef9f5"
+    },
+    {
+      "path": "products/github-copilot.json",
+      "bytes": 125902,
+      "sha256": "581047216b83d6a44d43fc34da5ca21bfd8ad6392696d46939f04a0e3c519abd"
+    },
+    {
+      "path": "products/google-antigravity.json",
+      "bytes": 127323,
+      "sha256": "5b9b94977d1f1929cc82ee40412db8b7efb196f71c9d914e680b5ed12e53f44e"
+    },
+    {
+      "path": "products/goose.json",
+      "bytes": 76100,
+      "sha256": "025418bed283dfaf2a1e4f34711c903ed94f1f37f5fa2a7fa9a2f77931ddc9bc"
+    },
+    {
+      "path": "products/grok-build.json",
+      "bytes": 118453,
+      "sha256": "b8d3ccf1317bf5946e2037fa757faeb853d7b81770610a1747a6e3726b931804"
+    },
+    {
+      "path": "products/hermes-agent.json",
+      "bytes": 61329,
+      "sha256": "1885c726fd9df8981ef933d200c24b2d81266e02e107f770212d605deaba3263"
+    },
+    {
+      "path": "products/jules.json",
+      "bytes": 70533,
+      "sha256": "2e228c07793c5ce89d472525ae2aafd8ee2015cf1ad3ab579f7dca50e21a323e"
+    },
+    {
+      "path": "products/kilo-code.json",
+      "bytes": 135649,
+      "sha256": "520295d4a4fcbd8f01bcbf5a1177710620d1c781b5a81b0751117e8bc0bab399"
+    },
+    {
+      "path": "products/kimi-code.json",
+      "bytes": 178157,
+      "sha256": "9bb3746c34af437d2e71371db22d402e3b38aa5bafea7cb3c74ff65c8e420244"
+    },
+    {
+      "path": "products/kiro.json",
+      "bytes": 132145,
+      "sha256": "adee76bf280fe2b59e64fedcfcc68caa611dd0cd34d90ee74aaf8dc459d43bb8"
+    },
+    {
+      "path": "products/minimax-code.json",
+      "bytes": 64868,
+      "sha256": "7379df039825605fda5244271a53bfaa347739c144d7642939543cd33a916a42"
+    },
+    {
+      "path": "products/mistral-vibe.json",
+      "bytes": 128543,
+      "sha256": "5dc710d869be46662e251aeabc8ae8cacb7494372604c9bddc44b6326aff23fb"
+    },
+    {
+      "path": "products/muse-code.json",
+      "bytes": 39751,
+      "sha256": "e55fe50d415060bd06628b9485f35e973ea7d7ebbdcb96e0cd9d61d088454f35"
+    },
+    {
+      "path": "products/oh-my-pi.json",
+      "bytes": 97959,
+      "sha256": "8efd0693c5a37d69087b0d34df8dbc4f6022938ff7822cb0ffa08bf6b593c7fe"
+    },
+    {
+      "path": "products/openclaw.json",
+      "bytes": 58167,
+      "sha256": "cd551467c80347f42ac5351bc295239068a8d7fa409be02581e936f41c0c7dd7"
+    },
+    {
+      "path": "products/opencode.json",
+      "bytes": 73518,
+      "sha256": "1a6f77a1fce6bc09f5ad971ab15d1a682b396041ad14e692dfb4f42856996773"
+    },
+    {
+      "path": "products/openhands.json",
+      "bytes": 153680,
+      "sha256": "4e0eb178addf6407926e37ac7f887ef1ea1e1800751754e28700f955eeffbcda"
+    },
+    {
+      "path": "products/pi.json",
+      "bytes": 85670,
+      "sha256": "de266001b774b5da87356b6b64a60f78b3ca2a90fc05c1e9c21f4b4d79aecb01"
+    },
+    {
+      "path": "products/prime-agent.json",
+      "bytes": 100448,
+      "sha256": "5c86f6e0a1f100d135b11828a85080cdb2a06c17d8fb3c23299cbf3aac87543e"
+    },
+    {
+      "path": "products/qwen-code.json",
+      "bytes": 142864,
+      "sha256": "548a37217fead89466dc24484720bb818e8ada8e21c6691f190f3b4eec70592c"
+    },
+    {
+      "path": "products/replit-agent.json",
+      "bytes": 112450,
+      "sha256": "6aff462f01033d0cf2a8988003da4e560bcc7a79e76374d3e9fa5c0c5f9c10e6"
+    },
+    {
+      "path": "products/symphony.json",
+      "bytes": 75377,
+      "sha256": "8b1639ba4e150e401eabc8f7370a32aaf5672203095a628dc3d32d688d8b19b5"
+    },
+    {
+      "path": "products/t3-code.json",
+      "bytes": 127017,
+      "sha256": "44be841018e7e7a067d9bf6832f1ee5626aa2af5a5e4bfafdec6407636a2da29"
+    },
+    {
+      "path": "products/zcode.json",
+      "bytes": 114402,
+      "sha256": "334055c223067e817eff873dfb14f554681b66d1035d0644756ec05684b8c67e"
+    },
+    {
+      "path": "relationships.json",
+      "bytes": 17518,
+      "sha256": "6e6505275744213fb9e210ace57421fff862e0bbae1a076053f11f7afc8e683d"
+    },
+    {
+      "path": "schema.json",
+      "bytes": 11875,
+      "sha256": "8d3a65529ddbd238ef3dd4e4fc6284fc2e9308026afc4047a6278bb7fb43560f"
+    }
+  ],
+  "honesty": {
+    "hands_on_observation_rows": 0,
+    "reviewer_status_summary": {
+      "accepted": 1596,
+      "unreviewed": 1931
+    },
+    "accepted_claims_by_product": {
+      "aider": 39,
+      "amp": 10,
+      "atomic": 77,
+      "claude-code": 53,
+      "cline": 7,
+      "codex-family": 50,
+      "conductor": 6,
+      "crush": 12,
+      "cursor": 12,
+      "deepseek-harness": 7,
+      "devin": 9,
+      "factory-droids": 11,
+      "gemini-cli": 44,
+      "github-copilot": 18,
+      "google-antigravity": 10,
+      "goose": 52,
+      "grok-build": 14,
+      "hermes-agent": 46,
+      "jules": 48,
+      "kilo-code": 7,
+      "kimi-code": 196,
+      "kiro": 143,
+      "minimax-code": 47,
+      "mistral-vibe": 138,
+      "muse-code": 38,
+      "oh-my-pi": 83,
+      "openclaw": 48,
+      "opencode": 52,
+      "openhands": 15,
+      "pi": 71,
+      "prime-agent": 81,
+      "qwen-code": 20,
+      "replit-agent": 101,
+      "symphony": 6,
+      "t3-code": 10,
+      "zcode": 15
+    },
+    "note": "This pack contains documented claims with provenance, not test results."
+  }
+}

@@ -1,0 +1,613 @@
+{
+  "pack_version": "2026-08-18+340a252a",
+  "relationships": [
+    {
+      "source_id": "atomic-ui-fork",
+      "edge": "fork_of",
+      "target_id": "atomic",
+      "evidence_claim_id": "claim-atomic-ui-fork-lineage",
+      "captured_at": "2026-08-09",
+      "confidence": "high"
+    },
+    {
+      "source_id": "atomic",
+      "edge": "fork_of",
+      "target_id": "pi",
+      "evidence_claim_id": "claim-atomic-fork-pi",
+      "captured_at": "2026-08-09",
+      "confidence": "high"
+    },
+    {
+      "source_id": "boo-code",
+      "edge": "fork_of",
+      "target_id": "zoo-code",
+      "evidence_claim_id": "claim-boo-code-lineage",
+      "captured_at": "2026-08-09",
+      "confidence": "high"
+    },
+    {
+      "source_id": "cline",
+      "edge": "reuses_auth_from",
+      "target_id": "claude-code",
+      "evidence_claim_id": "claim-cline-sf-reuses-auth-claude",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "cline",
+      "edge": "reuses_auth_from",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-cline-sf-reuses-auth-codex",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "cline",
+      "edge": "wraps_cli",
+      "target_id": "claude-code",
+      "evidence_claim_id": "claim-cline-sf-wraps-cli-claude-code",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "coder",
+      "edge": "orchestrates",
+      "target_id": "aider",
+      "evidence_claim_id": "claim-coder-nw-orchestrates-aider",
+      "captured_at": "2026-08-16",
+      "confidence": "high"
+    },
+    {
+      "source_id": "coder",
+      "edge": "orchestrates",
+      "target_id": "claude-code",
+      "evidence_claim_id": "claim-coder-nw-orchestrates-claude",
+      "captured_at": "2026-08-16",
+      "confidence": "high"
+    },
+    {
+      "source_id": "coder",
+      "edge": "orchestrates",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-coder-nw-orchestrates-codex",
+      "captured_at": "2026-08-16",
+      "confidence": "high"
+    },
+    {
+      "source_id": "coder",
+      "edge": "orchestrates",
+      "target_id": "goose",
+      "evidence_claim_id": "claim-coder-nw-orchestrates-goose",
+      "captured_at": "2026-08-16",
+      "confidence": "high"
+    },
+    {
+      "source_id": "conductor",
+      "edge": "orchestrates",
+      "target_id": "claude-code",
+      "evidence_claim_id": "claim-conductor-sf-orchestrates-claude-code",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "conductor",
+      "edge": "orchestrates",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-conductor-sf-orchestrates-codex",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "conductor",
+      "edge": "orchestrates",
+      "target_id": "cursor",
+      "evidence_claim_id": "claim-conductor-sf-orchestrates-cursor",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "conductor",
+      "edge": "orchestrates",
+      "target_id": "opencode",
+      "evidence_claim_id": "claim-conductor-sf-orchestrates-opencode",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "conductor",
+      "edge": "reuses_auth_from",
+      "target_id": "claude-code",
+      "evidence_claim_id": "claim-conductor-sf-reuses-auth-claude",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "conductor",
+      "edge": "reuses_auth_from",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-conductor-sf-reuses-auth-codex",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "conductor",
+      "edge": "reuses_auth_from",
+      "target_id": "cursor",
+      "evidence_claim_id": "claim-conductor-sf-reuses-auth-cursor",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "conductor",
+      "edge": "wraps_cli",
+      "target_id": "claude-code",
+      "evidence_claim_id": "claim-conductor-sf-wraps-cli-claude-code",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "conductor",
+      "edge": "wraps_cli",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-conductor-sf-wraps-cli-codex",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "conductor",
+      "edge": "wraps_cli",
+      "target_id": "opencode",
+      "evidence_claim_id": "claim-conductor-sf-wraps-cli-opencode",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "crush",
+      "edge": "reuses_auth_from",
+      "target_id": "opencode",
+      "evidence_claim_id": "claim-crush-sf-reuses-opencode",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "devin",
+      "edge": "connects_via",
+      "target_id": "claude-code",
+      "evidence_claim_id": "claim-devin-sf-acp-third-party",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "devin",
+      "edge": "connects_via",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-devin-sf-acp-third-party",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "devin",
+      "edge": "connects_via",
+      "target_id": "gemini-cli",
+      "evidence_claim_id": "claim-devin-sf-acp-third-party",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "devin",
+      "edge": "connects_via",
+      "target_id": "opencode",
+      "evidence_claim_id": "claim-devin-sf-acp-third-party",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "every-code",
+      "edge": "fork_of",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-every-code-lineage",
+      "captured_at": "2026-08-09",
+      "confidence": "high"
+    },
+    {
+      "source_id": "fulcrum",
+      "edge": "fork_of",
+      "target_id": "prime-agent",
+      "evidence_claim_id": "claim-fulcrum-lineage",
+      "captured_at": "2026-08-09",
+      "confidence": "high"
+    },
+    {
+      "source_id": "goose",
+      "edge": "connects_via",
+      "target_id": "claude-code",
+      "evidence_claim_id": "claim-goose-w2-acp-claude",
+      "captured_at": "2026-08-10",
+      "confidence": "high"
+    },
+    {
+      "source_id": "goose",
+      "edge": "connects_via",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-goose-w2-acp-codex",
+      "captured_at": "2026-08-10",
+      "confidence": "high"
+    },
+    {
+      "source_id": "goose",
+      "edge": "connects_via",
+      "target_id": "gemini-cli",
+      "evidence_claim_id": "claim-goose-w2-gemini-cli-provider",
+      "captured_at": "2026-08-10",
+      "confidence": "high"
+    },
+    {
+      "source_id": "goose",
+      "edge": "connects_via",
+      "target_id": "pi",
+      "evidence_claim_id": "claim-goose-w2-acp-pi",
+      "captured_at": "2026-08-10",
+      "confidence": "high"
+    },
+    {
+      "source_id": "goose",
+      "edge": "orchestrates",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-goose-w2-codex-subagent",
+      "captured_at": "2026-08-10",
+      "confidence": "high"
+    },
+    {
+      "source_id": "goose",
+      "edge": "reuses_auth_from",
+      "target_id": "claude-code",
+      "evidence_claim_id": "claim-goose-w2-acp-claude",
+      "captured_at": "2026-08-10",
+      "confidence": "high"
+    },
+    {
+      "source_id": "goose",
+      "edge": "reuses_auth_from",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-goose-w2-acp-codex",
+      "captured_at": "2026-08-10",
+      "confidence": "high"
+    },
+    {
+      "source_id": "goose",
+      "edge": "reuses_auth_from",
+      "target_id": "gemini-cli",
+      "evidence_claim_id": "claim-goose-w2-gemini-cli-provider",
+      "captured_at": "2026-08-10",
+      "confidence": "high"
+    },
+    {
+      "source_id": "goose",
+      "edge": "reuses_auth_from",
+      "target_id": "pi",
+      "evidence_claim_id": "claim-goose-w2-acp-pi",
+      "captured_at": "2026-08-10",
+      "confidence": "high"
+    },
+    {
+      "source_id": "happy-coder",
+      "edge": "client_for",
+      "target_id": "claude-code",
+      "evidence_claim_id": "claim-happy-coder-nw-client-for-readme",
+      "captured_at": "2026-08-16",
+      "confidence": "high"
+    },
+    {
+      "source_id": "happy-coder",
+      "edge": "client_for",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-happy-coder-nw-client-for-readme",
+      "captured_at": "2026-08-16",
+      "confidence": "high"
+    },
+    {
+      "source_id": "happy-coder",
+      "edge": "reuses_auth_from",
+      "target_id": "claude-code",
+      "evidence_claim_id": "claim-happy-coder-nw-auth-reuse-claude",
+      "captured_at": "2026-08-16",
+      "confidence": "high"
+    },
+    {
+      "source_id": "happy-coder",
+      "edge": "reuses_auth_from",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-happy-coder-nw-auth-reuse-codex",
+      "captured_at": "2026-08-16",
+      "confidence": "high"
+    },
+    {
+      "source_id": "happy-coder",
+      "edge": "wraps_cli",
+      "target_id": "claude-code",
+      "evidence_claim_id": "claim-happy-coder-nw-wraps-claude",
+      "captured_at": "2026-08-16",
+      "confidence": "high"
+    },
+    {
+      "source_id": "happy-coder",
+      "edge": "wraps_cli",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-happy-coder-nw-wraps-codex",
+      "captured_at": "2026-08-16",
+      "confidence": "high"
+    },
+    {
+      "source_id": "happy-coder",
+      "edge": "wraps_cli",
+      "target_id": "opencode",
+      "evidence_claim_id": "claim-happy-coder-nw-wraps-opencode",
+      "captured_at": "2026-08-16",
+      "confidence": "medium"
+    },
+    {
+      "source_id": "kilo-code",
+      "edge": "fork_of",
+      "target_id": "opencode",
+      "evidence_claim_id": "claim-kilo-code-sf-lineage-cli-opencode",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "oh-my-pi",
+      "edge": "fork_of",
+      "target_id": "pi",
+      "evidence_claim_id": "claim-oh-my-pi-fork-pi",
+      "captured_at": "2026-08-09",
+      "confidence": "high"
+    },
+    {
+      "source_id": "open-swe",
+      "edge": "built_on",
+      "target_id": "deepagents",
+      "evidence_claim_id": "claim-open-swe-nw-lineage-deepagents",
+      "captured_at": "2026-08-16",
+      "confidence": "high"
+    },
+    {
+      "source_id": "openhands",
+      "edge": "reuses_auth_from",
+      "target_id": "claude-code",
+      "evidence_claim_id": "claim-openhands-sf-reuses-auth-claude",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "openhands",
+      "edge": "reuses_auth_from",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-openhands-sf-reuses-auth-codex",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "openhands",
+      "edge": "reuses_auth_from",
+      "target_id": "gemini-cli",
+      "evidence_claim_id": "claim-openhands-sf-reuses-auth-gemini",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "openhands",
+      "edge": "wraps_cli",
+      "target_id": "claude-code",
+      "evidence_claim_id": "claim-openhands-sf-wraps-cli-claude-code",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "openhands",
+      "edge": "wraps_cli",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-openhands-sf-wraps-cli-codex",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "openhands",
+      "edge": "wraps_cli",
+      "target_id": "gemini-cli",
+      "evidence_claim_id": "claim-openhands-sf-wraps-cli-gemini-cli",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "prime-agent",
+      "edge": "built_on",
+      "target_id": "pi",
+      "evidence_claim_id": "claim-prime-agent-built-on-pi",
+      "captured_at": "2026-08-09",
+      "confidence": "high"
+    },
+    {
+      "source_id": "qwen-code",
+      "edge": "fork_of",
+      "target_id": "gemini-cli",
+      "evidence_claim_id": "claim-qwen-code-sf-lineage",
+      "captured_at": "2026-08-15",
+      "confidence": "high"
+    },
+    {
+      "source_id": "symphony",
+      "edge": "orchestrates",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-symphony-sf-orchestrates-codex",
+      "captured_at": "2026-08-15",
+      "confidence": "high"
+    },
+    {
+      "source_id": "symphony",
+      "edge": "reuses_auth_from",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-symphony-sf-reuses-auth-codex",
+      "captured_at": "2026-08-15",
+      "confidence": "high"
+    },
+    {
+      "source_id": "symphony",
+      "edge": "wraps_cli",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-symphony-sf-wraps-cli-codex",
+      "captured_at": "2026-08-15",
+      "confidence": "high"
+    },
+    {
+      "source_id": "t3-code",
+      "edge": "reuses_auth_from",
+      "target_id": "claude-code",
+      "evidence_claim_id": "claim-t3-code-sf-reuses-claude",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "t3-code",
+      "edge": "reuses_auth_from",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-t3-code-sf-reuses-codex",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "t3-code",
+      "edge": "reuses_auth_from",
+      "target_id": "cursor",
+      "evidence_claim_id": "claim-t3-code-sf-reuses-cursor",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "t3-code",
+      "edge": "reuses_auth_from",
+      "target_id": "grok-build",
+      "evidence_claim_id": "claim-t3-code-sf-reuses-grok",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "t3-code",
+      "edge": "reuses_auth_from",
+      "target_id": "opencode",
+      "evidence_claim_id": "claim-t3-code-sf-reuses-opencode",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "t3-code",
+      "edge": "wraps_cli",
+      "target_id": "claude-code",
+      "evidence_claim_id": "claim-t3-code-sf-wraps-cli-readme",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "t3-code",
+      "edge": "wraps_cli",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-t3-code-sf-wraps-cli-readme",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "t3-code",
+      "edge": "wraps_cli",
+      "target_id": "cursor",
+      "evidence_claim_id": "claim-t3-code-sf-wraps-cli-readme",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "t3-code",
+      "edge": "wraps_cli",
+      "target_id": "grok-build",
+      "evidence_claim_id": "claim-t3-code-sf-wraps-cli-readme",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "t3-code",
+      "edge": "wraps_cli",
+      "target_id": "opencode",
+      "evidence_claim_id": "claim-t3-code-sf-wraps-cli-readme",
+      "captured_at": "2026-08-14",
+      "confidence": "high"
+    },
+    {
+      "source_id": "warp",
+      "edge": "orchestrates",
+      "target_id": "claude-code",
+      "evidence_claim_id": "claim-warp-nw-w-compat-harnesses",
+      "captured_at": "2026-08-16",
+      "confidence": "high"
+    },
+    {
+      "source_id": "warp",
+      "edge": "orchestrates",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-warp-nw-w-compat-harnesses",
+      "captured_at": "2026-08-16",
+      "confidence": "high"
+    },
+    {
+      "source_id": "zed",
+      "edge": "client_for",
+      "target_id": "claude-code",
+      "evidence_claim_id": "claim-zed-nw-z-api-acp",
+      "captured_at": "2026-08-16",
+      "confidence": "high"
+    },
+    {
+      "source_id": "zed",
+      "edge": "client_for",
+      "target_id": "codex-family",
+      "evidence_claim_id": "claim-zed-nw-z-api-acp",
+      "captured_at": "2026-08-16",
+      "confidence": "high"
+    },
+    {
+      "source_id": "zed",
+      "edge": "client_for",
+      "target_id": "cursor",
+      "evidence_claim_id": "claim-zed-nw-z-api-acp",
+      "captured_at": "2026-08-16",
+      "confidence": "medium"
+    },
+    {
+      "source_id": "zed",
+      "edge": "client_for",
+      "target_id": "gemini-cli",
+      "evidence_claim_id": "claim-zed-nw-z-api-acp",
+      "captured_at": "2026-08-16",
+      "confidence": "high"
+    },
+    {
+      "source_id": "zed",
+      "edge": "client_for",
+      "target_id": "github-copilot",
+      "evidence_claim_id": "claim-zed-nw-z-api-acp",
+      "captured_at": "2026-08-16",
+      "confidence": "medium"
+    },
+    {
+      "source_id": "zed",
+      "edge": "client_for",
+      "target_id": "opencode",
+      "evidence_claim_id": "claim-zed-nw-z-api-acp",
+      "captured_at": "2026-08-16",
+      "confidence": "high"
+    },
+    {
+      "source_id": "zed",
+      "edge": "client_for",
+      "target_id": "pi",
+      "evidence_claim_id": "claim-zed-nw-z-api-acp",
+      "captured_at": "2026-08-16",
+      "confidence": "high"
+    }
+  ]
+}

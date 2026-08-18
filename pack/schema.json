@@ -1,0 +1,252 @@
+{
+  "pack_version": "2026-08-18+340a252a",
+  "title": "Battle Harnesses corpus pack field semantics",
+  "derived_from": "research/schema/research-schema.md",
+  "purpose": "Machine-readable field and label semantics for an agent reader. Condensed from the research schema; not a second source of product facts.",
+  "reading_rules": [
+    "This pack contains documented claims with provenance, not test results.",
+    "evidence_class names the kind of source. It does not mean the claim is true.",
+    "reviewer_status=unreviewed means no reviewer has accepted the claim. An unreviewed official-claim is a vendor or project assertion, not verified ground truth.",
+    "Do not treat official-claim, official-docs, or repository-or-code as independently confirmed fact unless reviewer_status is accepted and the evidence class actually supports that fact.",
+    "confidence is the recorded confidence in that source reading (high|medium|low|unknown). It is not a product quality score.",
+    "The literal string unknown means not established. It is not evidence that a product lacks a capability.",
+    "JSON null is invalid in the research ledgers. Do not invent null, n/a, or tbd in place of unknown.",
+    "social-discovery-only may identify a candidate lead. It cannot establish a product fact, relationship, or surface.",
+    "hands-on-observation and controlled-experiment are the only evidence classes that record a run. Their absence means this pack is not a test-result archive.",
+    "candidates.csv is excluded. This pack covers verified dossiers only. Counts of unverified candidates are outside the pack.",
+    "judged/judged.md is a distilled scenario-verdict layer over this same corpus: read its own binding-evidence-posture line before using any verdict in it. judged/README.md explains provenance. Both are optional — a pack without them still stands on the product/claim/relationship files.",
+    "contradictions.json is a mechanical index of claim rows whose notes carry dispute/update marker phrases (Disputed by, Contradicts canonical, Conflicts with, Updated by). It adds no new facts and is non-exhaustive; both sides of every dispute stay in the product files. Keep both sides; never average."
+  ],
+  "records": {
+    "claim": {
+      "keys": [
+        "claim_id",
+        "project_id",
+        "field",
+        "claim",
+        "value",
+        "evidence_class",
+        "source_url",
+        "source_title",
+        "captured_at",
+        "product_version_or_date",
+        "confidence",
+        "reviewer_status",
+        "notes"
+      ],
+      "notes": "Every material product fact is a claim. Vendor claims, docs, code, observations, tests, independent sources, inference, and opinion stay on separate lines with their own evidence_class. Provenance fields are preserved verbatim from the ledger.",
+      "fields": {
+        "claim_id": "Stable claim identity. Format claim-[a-z0-9]+(?:-[a-z0-9]+)*. A new dated observation gets a new id.",
+        "project_id": "Product slug. Must resolve to a candidate in the corpus. Pack product files include only verified-dossier project ids.",
+        "field": "The claim dimension. One of the claim-field enumeration.",
+        "claim": "Readable assertion that explains value.",
+        "value": "JSON string, number, boolean, array, or object; never null. Field-specific enums apply.",
+        "evidence_class": "Source class. See enumerations.evidence_class. Not a truth bit.",
+        "source_url": "Absolute http(s) URL of the checked source.",
+        "source_title": "Required source title.",
+        "captured_at": "Calendar date YYYY-MM-DD on which this source was checked. Not an undated current label.",
+        "product_version_or_date": "Required text; may be unknown when the source does not identify a version.",
+        "confidence": "high|medium|low|unknown. Source-reading confidence, not a score.",
+        "reviewer_status": "unreviewed|accepted|flagged|rejected|deferred. unreviewed is not accepted.",
+        "notes": "Optional; empty string allowed."
+      }
+    },
+    "product": {
+      "keys": [
+        "id",
+        "name",
+        "vendor",
+        "canonicalUrl",
+        "repositoryUrl",
+        "proposedType",
+        "lastVerified",
+        "compare",
+        "surfaces_summary",
+        "catalogGroup",
+        "notFor"
+      ],
+      "notes": "Structured fields already derived by generate-site-data.mjs. compare cells, surfaces_summary, catalogGroup, and notFor (when present) are derived views over claims and surfaces, not new facts.",
+      "fields": {
+        "id": "Stable product slug.",
+        "name": "Display name from the candidate ledger or dossier title.",
+        "compare": "Compare-matrix cells mapped from claims and surfaces. kind text|state; state marks are s|u|n|k (supported, unsupported, not-applicable, unknown).",
+        "surfaces_summary": "Count and names of this product's surface rows.",
+        "catalogGroup": "Editorial catalogue placement when present; null otherwise. Not a quality verdict.",
+        "notFor": "Present only when site-data already derived not-for values from the dossier or not_for claims."
+      }
+    },
+    "relationship": {
+      "keys": [
+        "source_id",
+        "edge",
+        "target_id",
+        "evidence_claim_id",
+        "captured_at",
+        "confidence"
+      ],
+      "notes": "Directed tuple (source_id, edge, target_id). Every edge points at an existing evidence_claim_id. social-discovery-only cannot support an edge.",
+      "fields": {
+        "source_id": "From product id.",
+        "edge": "One relationship-edge enumeration value.",
+        "target_id": "To product id.",
+        "evidence_claim_id": "Claim that supports the edge. Must belong to source_id.",
+        "captured_at": "Observation date YYYY-MM-DD; not later than the evidence claim capture.",
+        "confidence": "high|medium|low|unknown."
+      }
+    },
+    "surface": {
+      "keys": [
+        "project_id",
+        "surface_id",
+        "surface_name",
+        "surface_owner",
+        "interface_type",
+        "client_platform",
+        "agent_host",
+        "connection_path",
+        "remote_start",
+        "remote_resume",
+        "approve_actions",
+        "inspect_tools",
+        "session_continuity",
+        "official_support",
+        "evidence_claim_id",
+        "captured_at",
+        "notes"
+      ],
+      "notes": "One named access surface. Capability states are supported|unsupported|unknown, not booleans. Unsupported means the checked surface does not provide it; unknown means not established."
+    },
+    "neighborhood": {
+      "keys": [
+        "id",
+        "label",
+        "similarityBasis",
+        "memberships"
+      ],
+      "notes": "Comparison aid grouped from comparison-neighborhoods.jsonl. Not a universal cluster or verdict. Shared labels such as cli or agent do not establish membership."
+    }
+  },
+  "enumerations": {
+    "evidence_class": {
+      "official-claim": {
+        "meaning": "A vendor or project claim.",
+        "supports": "Primary-source evidence for identity and capability claims, when accepted.",
+        "does_not_support": "Treating the text as independently verified ground truth, especially when reviewer_status is unreviewed."
+      },
+      "official-docs": {
+        "meaning": "First-party documentation.",
+        "supports": "Primary-source evidence for identity and capability claims, when accepted.",
+        "does_not_support": "Equating documentation with a hands-on test result."
+      },
+      "repository-or-code": {
+        "meaning": "First-party or canonical repository or code evidence.",
+        "supports": "Primary-source evidence for identity and capability claims, when accepted. Required class (with official-claim or official-docs) for fork_of and wraps_cli edges.",
+        "does_not_support": "A runtime observation of product behaviour."
+      },
+      "hands-on-observation": {
+        "meaning": "A recorded direct run without a controlled design.",
+        "supports": "A dated observation that someone ran the product.",
+        "does_not_support": "A controlled experiment or a general quality verdict."
+      },
+      "controlled-experiment": {
+        "meaning": "A run with declared controls and validation.",
+        "supports": "Test-style evidence when present.",
+        "does_not_support": "Backfilling test results onto official-claim rows."
+      },
+      "independent-source": {
+        "meaning": "An independent technical source or test.",
+        "supports": "Third-party technical reporting.",
+        "does_not_support": "Replacing first-party identity evidence."
+      },
+      "social-discovery-only": {
+        "meaning": "A lead from social discussion; not product proof.",
+        "supports": "Candidate discovery notes only.",
+        "does_not_support": "Product facts, relationships, or surfaces."
+      },
+      "inference": {
+        "meaning": "A reasoned interpretation of recorded evidence.",
+        "supports": "An explicit interpretation line that must not replace its source-backed lines.",
+        "does_not_support": "fork_of or wraps_cli identity."
+      },
+      "editorial-opinion": {
+        "meaning": "A project judgment or recommendation.",
+        "supports": "An explicit editorial line, kept separate from source-backed lines.",
+        "does_not_support": "Identity, capability, or test proof."
+      }
+    },
+    "confidence": {
+      "high": "Recorded high confidence in this source reading.",
+      "medium": "Recorded medium confidence in this source reading.",
+      "low": "Recorded low confidence in this source reading.",
+      "unknown": "Confidence not established."
+    },
+    "reviewer_status": {
+      "unreviewed": "No reviewer has accepted this claim. Do not treat as verified.",
+      "accepted": "A reviewer accepted this claim.",
+      "flagged": "A reviewer flagged this claim.",
+      "rejected": "A reviewer rejected this claim. Site compare mapping ignores rejected rows; the pack still ships the row with this status.",
+      "deferred": "Review deferred."
+    },
+    "claim_field": [
+      "identity",
+      "status",
+      "primary_type",
+      "secondary_role",
+      "capability_tag",
+      "vendor",
+      "canonical_url",
+      "repository_url",
+      "version",
+      "license",
+      "pricing",
+      "maintenance",
+      "architecture",
+      "agent_loop_owner",
+      "execution_location",
+      "model_strategy",
+      "auth_strategy",
+      "provider_support",
+      "context_behavior",
+      "memory",
+      "compaction",
+      "session_behavior",
+      "tools",
+      "extensions",
+      "mcp",
+      "skills",
+      "hooks",
+      "api",
+      "orchestration",
+      "parallelism",
+      "isolation",
+      "permissions",
+      "security",
+      "data_path",
+      "surface",
+      "access_route",
+      "remote_access",
+      "mobile_access",
+      "background",
+      "compatibility",
+      "lineage",
+      "unique_value",
+      "drawback",
+      "intended_user",
+      "not_for",
+      "availability",
+      "discovery_note"
+    ],
+    "relationship_edge": {
+      "fork_of": "Codebase or product lineage.",
+      "built_on": "Substantive foundation in another runtime or toolkit.",
+      "wraps_cli": "Starts or controls another product's CLI process.",
+      "client_for": "User-facing client for another runtime.",
+      "orchestrates": "Coordinates runs or agents supplied by another product.",
+      "extends": "Adds skills, hooks, plugins, memory, or workflow behavior.",
+      "runs_in": "Uses an execution environment or sandbox.",
+      "connects_via": "Uses MCP, SDK, RPC, API, WebSocket, or another protocol.",
+      "reuses_auth_from": "Uses another product's authenticated subscription or credentials.",
+      "competes_with": "Editorial edge for a substantially similar user job; not an architecture claim."
+    }
+  }
+}

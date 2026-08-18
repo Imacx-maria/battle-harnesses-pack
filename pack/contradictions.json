@@ -1,0 +1,1034 @@
+{
+  "pack_version": "2026-08-18+340a252a",
+  "derivation": "Mechanical extraction from claim notes-field marker phrases (Disputed by / Contradicts canonical / Conflicts with / Updated by). No judgment applied; non-exhaustive. referenced_claim_ids are all claim ids appearing in the note, which may include plain cross-references beside the disputing row. Both sides of every dispute ship in the product files; keep both, never average.",
+  "counts": {
+    "conflicts_with": 53,
+    "disputed_by": 4,
+    "contradicts_canonical": 2,
+    "updated_by": 33
+  },
+  "contradictions": [
+    {
+      "claim_id": "claim-amp-sf-nvim-deprecated",
+      "project_id": "amp",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the current Owner’s Manual still listing the Neovim plugin as an IDE integration."
+    },
+    {
+      "claim_id": "claim-amp-sf-oracle-manual-chatgpt",
+      "project_id": "amp",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [
+        "claim-amp-sf-oracle-modes-chatgpt"
+      ],
+      "unresolved_references": [],
+      "note": "Conflicts with claim-amp-sf-oracle-modes-chatgpt. Keep both. Do not average."
+    },
+    {
+      "claim_id": "claim-amp-sf-oracle-modes-chatgpt",
+      "project_id": "amp",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [
+        "claim-amp-sf-oracle-manual-chatgpt"
+      ],
+      "unresolved_references": [],
+      "note": "Conflicts with claim-amp-sf-oracle-manual-chatgpt. Keep both. Do not average."
+    },
+    {
+      "claim_id": "claim-amp-sf-skills-neo-removed-commands",
+      "project_id": "amp",
+      "kinds": [
+        "disputed_by",
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [
+        "claim-amp-gf-amp-skills-update-commands"
+      ],
+      "unresolved_references": [],
+      "note": "Conflicts with the current manual and the August 11, 2026 global skills post. Disputed by claim-amp-gf-amp-skills-update-commands (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-claude-code-w2-pricing-page",
+      "project_id": "claude-code",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the deployment table."
+    },
+    {
+      "claim_id": "claim-cline-sf-extensions-vscode-marketplace",
+      "project_id": "cline",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with plugins.md warning that plugins are not applicable on VS Code for now."
+    },
+    {
+      "claim_id": "claim-cline-sf-jetbrains-plugin-id-overview",
+      "project_id": "cline",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with install-page id 28247-cline."
+    },
+    {
+      "claim_id": "claim-cline-sf-pricing-oss",
+      "project_id": "cline",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the documented ClinePass $9.99/month subscription. Keep both."
+    },
+    {
+      "claim_id": "claim-conductor-sf-vendor-melty-inc",
+      "project_id": "conductor",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the Terms vendor string Melty Labs, Inc."
+    },
+    {
+      "claim_id": "claim-conductor-sf-vendor-melty-labs",
+      "project_id": "conductor",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the Privacy Notice vendor string Melty, Inc."
+    },
+    {
+      "claim_id": "claim-cursor-sf-context-automations-max",
+      "project_id": "cursor",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the interactive Cloud Agents page that says you can select window size. Keep both sides."
+    },
+    {
+      "claim_id": "claim-cursor-sf-context-cloud-select",
+      "project_id": "cursor",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with automations and iOS pages that say those runs use the model maximum. Keep both sides."
+    },
+    {
+      "claim_id": "claim-cursor-sf-context-ios-max",
+      "project_id": "cursor",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the interactive Cloud Agents page that says you can select window size. Keep both sides."
+    },
+    {
+      "claim_id": "claim-cursor-sf-github-mention-cursoragent",
+      "project_id": "cursor",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the Cloud Agents overview, which says comment @cursor on a GitHub PR or issue. My Machines trigger docs also use @cursoragent. Keep both sides."
+    },
+    {
+      "claim_id": "claim-cursor-sf-ios-plans-include-start",
+      "project_id": "cursor",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the later Availability section on the same page, which omits Start. Keep both sides."
+    },
+    {
+      "claim_id": "claim-cursor-sf-ios-plans-omit-start",
+      "project_id": "cursor",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the same page's earlier Start listing and with Models & Pricing saying Start includes Cursor for iOS. Keep both sides."
+    },
+    {
+      "claim_id": "claim-cursor-sf-pricing-docs",
+      "project_id": "cursor",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the marketing pricing page presentation of Individual $20 covering Pro+/Ultra."
+    },
+    {
+      "claim_id": "claim-cursor-sf-pricing-page",
+      "project_id": "cursor",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Individual card shows one $20/mo price with Pro/Pro+/Ultra feature toggles. Conflicts with docs dollar amounts for Pro Plus and Ultra."
+    },
+    {
+      "claim_id": "claim-cursor-sf-sandbox-cli",
+      "project_id": "cursor",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with product-page sandboxed-by-default wording; keep both."
+    },
+    {
+      "claim_id": "claim-cursor-sf-start-includes-cloud-ios",
+      "project_id": "cursor",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the iOS page Availability section that omits Start. Keep both sides."
+    },
+    {
+      "claim_id": "claim-cursor-sf-vendor-anysphere",
+      "project_id": "cursor",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the 2026-08-14 SpaceX acquisition post; keep both."
+    },
+    {
+      "claim_id": "claim-cursor-sf-vendor-spacex",
+      "project_id": "cursor",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with Terms of Service still naming Anysphere, Inc.; keep both."
+    },
+    {
+      "claim_id": "claim-devin-sf-parallelism",
+      "project_id": "devin",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "The Enterprise column has no concurrent-limit cell. Do not fill Enterprise as unlimited. Live GET checkpointed on 2026-08-15; values rest on the 2026-08-14 Wave 03 match. Conflicts with two 2026-08-16 renderer-fallback readings of devin.ai/pricing recorded in gap-fill-02 repairs-log (direct GET returns HTTP 429): one read Free/Pro up to 10 and Team/Enterprise unlimited; an independent same-day read Free 1, Pro up to 10, Max up to 10, Team Unlimited, Enterprise Unlimited. Canonical reading kept; keep all three sides, do not average. No gap-fill-02 claim row restates concurrency (adjudicated 2026-08-16, Fable per Maria's delegation)."
+    },
+    {
+      "claim_id": "claim-factory-droids-sf-teams-readme",
+      "project_id": "factory-droids",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the Droids product page and Slack docs, which name Slack and do not document a Teams install path. Keep both."
+    },
+    {
+      "claim_id": "claim-github-copilot-sf-faq-chat-ides",
+      "project_id": "github-copilot",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the plans page IDE list and features docs that include Xcode and Eclipse agent mode. Keep both."
+    },
+    {
+      "claim_id": "claim-github-copilot-sf-model-strategy",
+      "project_id": "github-copilot",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Wave-09 split: credit-consumption wording is on the marketing plans table, not this docs page. Conflicts with marketing catalog on Free; keep both."
+    },
+    {
+      "claim_id": "claim-github-copilot-sf-third-party-agents-pro-card",
+      "project_id": "github-copilot",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the same page's compare row that marks third-party agents Not included on Pro. Keep both."
+    },
+    {
+      "claim_id": "claim-github-copilot-sf-third-party-agents-pro-compare",
+      "project_id": "github-copilot",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the Pro card on the same page. Docs plans table includes Third-party Agents on Copilot Pro."
+    },
+    {
+      "claim_id": "claim-google-antigravity-sf-cli-calls-2-ide",
+      "project_id": "google-antigravity",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the 2.0 launch post and 2.0 overview that say 2.0 is independent of an IDE. Keep both."
+    },
+    {
+      "claim_id": "claim-google-antigravity-sf-cli-custom-endpoint",
+      "project_id": "google-antigravity",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with Plans no-BYO-endpoint. Keep both."
+    },
+    {
+      "claim_id": "claim-google-antigravity-sf-cli-gemini-api-key",
+      "project_id": "google-antigravity",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with Plans no-BYOK. Keep both. Changelog 1.1.13 documents the same path."
+    },
+    {
+      "claim_id": "claim-google-antigravity-sf-mcp-url-changelog",
+      "project_id": "google-antigravity",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the MCP docs warning that legacy url or httpUrl are not supported. Keep both."
+    },
+    {
+      "claim_id": "claim-google-antigravity-sf-model-strategy",
+      "project_id": "google-antigravity",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Nano Banana 2 is listed as a non-customizable image tool model. Conflicts with docs-home wording that Gemini 3.5 Flash powers all local agents."
+    },
+    {
+      "claim_id": "claim-google-antigravity-sf-models-home-35",
+      "project_id": "google-antigravity",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the models catalog that includes Gemini 3.7 Flash and third-party models. Keep both."
+    },
+    {
+      "claim_id": "claim-google-antigravity-sf-not-ide-2",
+      "project_id": "google-antigravity",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with CLI overview language that calls 2.0 a visual desktop editor/IDE. Keep both."
+    },
+    {
+      "claim_id": "claim-google-antigravity-sf-plans-no-org-tiers",
+      "project_id": "google-antigravity",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the Enterprise page and pricing org card that document Gemini Enterprise licenses. Keep both."
+    },
+    {
+      "claim_id": "claim-goose-w2-license",
+      "project_id": "goose",
+      "kinds": [
+        "disputed_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-goose-gf-goose-license-llms-mit"
+      ],
+      "unresolved_references": [],
+      "note": "Artifact scopes stay distinct. Disputed by claim-goose-gf-goose-license-llms-mit (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-grok-build-gf-gb-relay-host",
+      "project_id": "grok-build",
+      "kinds": [
+        "contradicts_canonical"
+      ],
+      "referenced_claim_ids": [
+        "claim-grok-build-sf-remote-access"
+      ],
+      "unresolved_references": [],
+      "note": "Contradicts canonical claim-grok-build-sf-remote-access, which scoped its no-vendor-relay reading to the terminal-support page. Both readings are kept as separate rows: this enterprise page establishes a first-party relay host, so the canonical reading is re-scoped to its own page rather than deleted."
+    },
+    {
+      "claim_id": "claim-grok-build-sf-remote-access",
+      "project_id": "grok-build",
+      "kinds": [
+        "disputed_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-grok-build-sf-remote-access-device-auth",
+        "claim-grok-build-gf-gb-relay-host"
+      ],
+      "unresolved_references": [],
+      "note": "Device-code login for headless or remote environments is claim-grok-build-sf-remote-access-device-auth. Changelog mentions remote resume and grok-desktop as an ACP client. No dedicated remoting product page was opened. Disputed by claim-grok-build-gf-gb-relay-host (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-grok-build-sf-rewind-changelog",
+      "project_id": "grok-build",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the still-live Sessions page file-restore wording. Keep both."
+    },
+    {
+      "claim_id": "claim-grok-build-sf-subagents-env-default",
+      "project_id": "grok-build",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with subagent docs enabled-by-default-when-unset wording. Keep both. Do not average."
+    },
+    {
+      "claim_id": "claim-kilo-code-sf-agents-docs-no-review",
+      "project_id": "kilo-code",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with README listing Review as a shipped agent."
+    },
+    {
+      "claim_id": "claim-kilo-code-sf-cloud-compute-beta-free",
+      "project_id": "kilo-code",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [
+        "claim-kilo-code-sf-cloud-compute-date"
+      ],
+      "unresolved_references": [],
+      "note": "Conflicts with /cloud billing from 2026-09-01 on claim-kilo-code-sf-cloud-compute-date. Keep both. Do not average."
+    },
+    {
+      "claim_id": "claim-kilo-code-sf-console-beta-marketing",
+      "project_id": "kilo-code",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with CLI docs deprecating kilo console. Keep both. Do not average."
+    },
+    {
+      "claim_id": "claim-kilo-code-sf-orchestration-cli-modes",
+      "project_id": "kilo-code",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with Using Agents built-ins and deprecated Orchestrator. Keep both. Do not average."
+    },
+    {
+      "claim_id": "claim-kilo-code-sf-readme-review-agent",
+      "project_id": "kilo-code",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with Using Agents docs."
+    },
+    {
+      "claim_id": "claim-kiro-nw-ios-17",
+      "project_id": "kiro",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the footer."
+    },
+    {
+      "claim_id": "claim-kiro-nw-model-catalog-docs",
+      "project_id": "kiro",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with FAQ list."
+    },
+    {
+      "claim_id": "claim-kiro-nw-model-catalog-faq",
+      "project_id": "kiro",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with docs catalog."
+    },
+    {
+      "claim_id": "claim-kiro-nw-model-free-faq",
+      "project_id": "kiro",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the Free card."
+    },
+    {
+      "claim_id": "claim-mistral-vibe-nw-agents-default-readme",
+      "project_id": "mistral-vibe",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the agents docs; both kept."
+    },
+    {
+      "claim_id": "claim-oh-my-pi-acp-readme-permission-claim",
+      "project_id": "oh-my-pi",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Assertion kind: vendor-claim. Source evidence item: evidence-oh-my-pi-readme-acp-permission-claim. Conflicts with detailed yolo rules."
+    },
+    {
+      "claim_id": "claim-qwen-code-gf-qc-serve-local-only-alpha",
+      "project_id": "qwen-code",
+      "kinds": [
+        "contradicts_canonical"
+      ],
+      "referenced_claim_ids": [
+        "claim-qwen-code-sf-remote-access-serve"
+      ],
+      "unresolved_references": [],
+      "note": "Contradicts canonical claim-qwen-code-sf-remote-access-serve rather than tightening it. Both exact readings are preserved: the qwen serve daemon page describes an HTTPS same-network route to a phone or tablet with --tls-cert and --tls-key, while this launch-template page calls the v0.16-alpha stage local-only and single-user and defers TLS-fronted deployment to v0.16.x. This row does not resolve the two into a single product-wide limit; what the launch-template page counts as local-only is not defined on that page."
+    },
+    {
+      "claim_id": "claim-qwen-code-sf-remote-access-serve",
+      "project_id": "qwen-code",
+      "kinds": [
+        "disputed_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-qwen-code-gf-qc-serve-local-only-alpha"
+      ],
+      "unresolved_references": [],
+      "note": "v0.16-alpha still labels containerized and multi-daemon deployments out of scope. Agent host remains the machine running qwen serve. Disputed by claim-qwen-code-gf-qc-serve-local-only-alpha (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-symphony-sf-maintenance-repo",
+      "project_id": "symphony",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the blog standalone-product sentence. Do not average."
+    },
+    {
+      "claim_id": "claim-symphony-sf-status-reference",
+      "project_id": "symphony",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [
+        "claim-symphony-gf2-status-recheck"
+      ],
+      "unresolved_references": [],
+      "note": "Conflicts with later public releases and main-branch pushes. Do not average. Re-verified by claim-symphony-gf2-status-recheck (gap-fill-02 2026-08-16)."
+    },
+    {
+      "claim_id": "claim-t3-code-sf-mintlify-codex-only",
+      "project_id": "t3-code",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with the 2026-08-14 main README and install.md five-CLI list. The main README says there is no docs site yet."
+    },
+    {
+      "claim_id": "claim-t3-code-sf-mintlify-two-modes",
+      "project_id": "t3-code",
+      "kinds": [
+        "conflicts_with"
+      ],
+      "referenced_claim_ids": [],
+      "unresolved_references": [],
+      "note": "Conflicts with docs/user/permission-modes.md, which documents four modes on main as of 2026-08-14."
+    }
+  ],
+  "updates": [
+    {
+      "claim_id": "claim-amp-sf-maintenance",
+      "project_id": "amp",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-amp-sf-maintenance-update",
+        "claim-amp-gf-amp-maintenance-chronicle-aug13"
+      ],
+      "unresolved_references": [],
+      "note": "amp update is claim-amp-sf-maintenance-update on the Owner's Manual. Updated by claim-amp-gf-amp-maintenance-chronicle-aug13 (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-amp-sf-skills",
+      "project_id": "amp",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-amp-gf-amp-skills-hosted-global"
+      ],
+      "unresolved_references": [],
+      "note": "Keep beside the May 2026 Neo claim that skill management commands were removed. Updated by claim-amp-gf-amp-skills-hosted-global (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-atomic-release-version",
+      "project_id": "atomic",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-atomic-wave3-release-version",
+        "claim-atomic-gf-atomic-ver-0914a1"
+      ],
+      "unresolved_references": [
+        "claim-atomic-wave3-release-version"
+      ],
+      "note": "Assertion kind: fact. Source evidence item: claim-atomic-wave3-release-version. Updated by claim-atomic-gf-atomic-ver-0914a1 (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-claude-code-w2-version",
+      "project_id": "claude-code",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-claude-code-gf-cc-ver-233"
+      ],
+      "unresolved_references": [],
+      "note": "Dated release snapshot, separate from repository activity. Updated by claim-claude-code-gf-cc-ver-233 (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-codex-family-w2-license-mixed",
+      "project_id": "codex-family",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-codex-family-gf-cf-open-source-components"
+      ],
+      "unresolved_references": [],
+      "note": "Family openness is mixed. source_url rewritten from developers.openai.com/codex after the docs host move (gap-fill 2026-08-16). Updated by claim-codex-family-gf-cf-open-source-components (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-codex-family-w2-release-status",
+      "project_id": "codex-family",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-codex-family-gf-cf-release-status"
+      ],
+      "unresolved_references": [],
+      "note": "Dated release snapshot, separate from repository activity. Updated by claim-codex-family-gf-cf-release-status (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-codex-family-w2-status",
+      "project_id": "codex-family",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-codex-family-gf-cf-repo-activity"
+      ],
+      "unresolved_references": [],
+      "note": "Dated repository-activity snapshot; stable and prerelease versions are ledgered separately. Updated by claim-codex-family-gf-cf-repo-activity (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-codex-family-w2-surface-desktop",
+      "project_id": "codex-family",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-codex-family-gf-cf-desktop-linux"
+      ],
+      "unresolved_references": [],
+      "note": "Distinct from CLI. source_url rewritten from developers.openai.com/codex after the docs host move (gap-fill 2026-08-16). Updated by claim-codex-family-gf-cf-desktop-linux (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-codex-family-w2-surface-remote",
+      "project_id": "codex-family",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-codex-family-gf-cf-remote-page"
+      ],
+      "unresolved_references": [],
+      "note": "Mobile is split into iOS and Android rows. source_url rewritten from developers.openai.com/codex after the docs host move (gap-fill 2026-08-16). Updated by claim-codex-family-gf-cf-remote-page (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-factory-droids-sf-version",
+      "project_id": "factory-droids",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-factory-droids-gf-factory-ver-0197"
+      ],
+      "unresolved_references": [],
+      "note": "Changelog snapshot on 2026-08-14; not a hands-on binary check. Updated by claim-factory-droids-gf-factory-ver-0197 (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-gemini-cli-w2-version-conflict",
+      "project_id": "gemini-cli",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-gemini-cli-gf-gemini-cli-version-stable-0551"
+      ],
+      "unresolved_references": [],
+      "note": "Stable release only; the main-branch nightly is ledgered separately. Updated by claim-gemini-cli-gf-gemini-cli-version-stable-0551 (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-goose-w2-status",
+      "project_id": "goose",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-goose-gf-goose-maintenance-repo"
+      ],
+      "unresolved_references": [],
+      "note": "Dated repository-activity snapshot; stable release is ledgered separately. Updated by claim-goose-gf-goose-maintenance-repo (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-goose-w2-version",
+      "project_id": "goose",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-goose-gf-goose-version-1460"
+      ],
+      "unresolved_references": [],
+      "note": "Dated stable-release snapshot, separate from repository activity. Updated by claim-goose-gf-goose-version-1460 (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-grok-build-sf-compatibility-claude",
+      "project_id": "grok-build",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-grok-build-gf-gb-claude-managed-settings"
+      ],
+      "unresolved_references": [],
+      "note": "CLI reference separately documents grok import from Claude Code. Compatibility is not identity merge with claude-code or grok-build-cli. Updated by claim-grok-build-gf-gb-claude-managed-settings (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-grok-build-sf-hooks",
+      "project_id": "grok-build",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-grok-build-gf-gb-hooks-page"
+      ],
+      "unresolved_references": [],
+      "note": "Project hooks require /hooks-trust. Hooks were not run. Updated by claim-grok-build-gf-gb-hooks-page (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-grok-build-sf-lineage-monorepo",
+      "project_id": "grok-build",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-grok-build-gf-gb-source-rev"
+      ],
+      "unresolved_references": [],
+      "note": "Whether the public tree is a complete monorepo export is unknown. Updated by claim-grok-build-gf-gb-source-rev (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-kilo-code-sf-maintenance",
+      "project_id": "kilo-code",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-kilo-code-gf-kilo-maintenance-repo"
+      ],
+      "unresolved_references": [],
+      "note": "Re-checked 2026-08-15; latest labeled release remained JetBrains 7.0.16. Updated by claim-kilo-code-gf-kilo-maintenance-repo (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-oh-my-pi-maintenance-signal",
+      "project_id": "oh-my-pi",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-oh-my-pi-gf-omp-release-17-3-5"
+      ],
+      "unresolved_references": [],
+      "note": "Assertion kind: fact. Source evidence item: evidence-oh-my-pi-release. Updated by claim-oh-my-pi-gf-omp-release-17-3-5 (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-oh-my-pi-repository-status",
+      "project_id": "oh-my-pi",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-oh-my-pi-gf-omp-repo-push-2026-08-16"
+      ],
+      "unresolved_references": [],
+      "note": "Assertion kind: code-or-repository-evidence. Source evidence item: evidence-oh-my-pi-status. Updated by claim-oh-my-pi-gf-omp-repo-push-2026-08-16 (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-oh-my-pi-unique-value",
+      "project_id": "oh-my-pi",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-oh-my-pi-gf-omp-positioning-ide-wired-in"
+      ],
+      "unresolved_references": [],
+      "note": "Assertion kind: vendor-claim. Source evidence item: evidence-oh-my-pi-unique-value. Updated by claim-oh-my-pi-gf-omp-positioning-ide-wired-in (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-oh-my-pi-version",
+      "project_id": "oh-my-pi",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-oh-my-pi-gf-omp-version-17-3-5"
+      ],
+      "unresolved_references": [],
+      "note": "Assertion kind: code-or-repository-evidence. Source evidence item: evidence-oh-my-pi-version. Updated by claim-oh-my-pi-gf-omp-version-17-3-5 (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-opencode-w2-pricing-services",
+      "project_id": "opencode",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-opencode-gf-oc-zen-pricing"
+      ],
+      "unresolved_references": [],
+      "note": "Go and Enterprise prices are recorded in separate claims. Updated by claim-opencode-gf-oc-zen-pricing (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-opencode-w2-status",
+      "project_id": "opencode",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-opencode-gf-oc-version"
+      ],
+      "unresolved_references": [],
+      "note": "Dated release status. Updated by claim-opencode-gf-oc-version (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-openhands-sf-maintenance",
+      "project_id": "openhands",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-openhands-gf-oh-repo-push-2026-08-15"
+      ],
+      "unresolved_references": [],
+      "note": "Pricing/enterprise site currency is not this row. Updated by claim-openhands-gf-oh-repo-push-2026-08-15 (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-pi-maintenance-signal",
+      "project_id": "pi",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-pi-status",
+        "claim-pi-release-version",
+        "claim-pi-gf-pi-repo-push-2026-08-16"
+      ],
+      "unresolved_references": [
+        "claim-pi-status"
+      ],
+      "note": "Assertion kind: code-or-repository-evidence. Source evidence item: claim-pi-status. Release facts remain in claim-pi-release-version. Updated by claim-pi-gf-pi-repo-push-2026-08-16 (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-pi-release-version",
+      "project_id": "pi",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-pi-version",
+        "claim-pi-gf-pi-release-0-84-2"
+      ],
+      "unresolved_references": [
+        "claim-pi-version"
+      ],
+      "note": "Assertion kind: vendor-claim. Source evidence item: claim-pi-version. Updated by claim-pi-gf-pi-release-0-84-2 (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-pi-remote-server-boundary",
+      "project_id": "pi",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-pi-remote-server",
+        "claim-pi-gf-pi-server-unix-socket"
+      ],
+      "unresolved_references": [
+        "claim-pi-remote-server"
+      ],
+      "note": "Assertion kind: code-or-repository-evidence. Source evidence item: claim-pi-remote-server. Updated by claim-pi-gf-pi-server-unix-socket (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-prime-agent-maintenance-signal",
+      "project_id": "prime-agent",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-prime-agent-version-0-7-1",
+        "claim-prime-agent-repository-status",
+        "claim-prime-agent-gf-pa-repo-push-2026-08-16"
+      ],
+      "unresolved_references": [
+        "claim-prime-agent-version-0-7-1"
+      ],
+      "note": "Assertion kind: code-or-repository-evidence. Source evidence item: claim-prime-agent-version-0-7-1. Repository activity remains in claim-prime-agent-repository-status. Updated by claim-prime-agent-gf-pa-repo-push-2026-08-16 (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-prime-agent-telemetry",
+      "project_id": "prime-agent",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-prime-agent-gf-pa-product-analytics"
+      ],
+      "unresolved_references": [],
+      "note": "Assertion kind: fact. Source evidence item: claim-prime-agent-telemetry. Updated by claim-prime-agent-gf-pa-product-analytics (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-prime-agent-version",
+      "project_id": "prime-agent",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-prime-agent-version-0-7-1",
+        "claim-prime-agent-gf-pa-release-0-7-2"
+      ],
+      "unresolved_references": [
+        "claim-prime-agent-version-0-7-1"
+      ],
+      "note": "Assertion kind: code-or-repository-evidence. Source evidence item: claim-prime-agent-version-0-7-1. Updated by claim-prime-agent-gf-pa-release-0-7-2 (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-qwen-code-sf-maintenance",
+      "project_id": "qwen-code",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-qwen-code-gf-qc-repo-push-2026-08-16"
+      ],
+      "unresolved_references": [],
+      "note": "Docs last-updated stamps on opened pages remain 2026-08-07. Updated by claim-qwen-code-gf-qc-repo-push-2026-08-16 (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-t3-code-sf-maintenance-nightlies",
+      "project_id": "t3-code",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-t3-code-gf-t3-nightlies"
+      ],
+      "unresolved_references": [],
+      "note": "These are Pre-release tags. Latest stable remains v0.0.33 on /releases/latest. Updated by claim-t3-code-gf-t3-nightlies (gap-fill 2026-08-16, Maria-adjudicated)."
+    },
+    {
+      "claim_id": "claim-zcode-sf-unique",
+      "project_id": "zcode",
+      "kinds": [
+        "updated_by"
+      ],
+      "referenced_claim_ids": [
+        "claim-zcode-sf-unique-welcome",
+        "claim-zcode-gf-zc-homepage-multi-agent-tagline"
+      ],
+      "unresolved_references": [],
+      "note": "ADE, ZCode Agent, and Mobile Remote are claim-zcode-sf-unique-welcome. Editorial uniqueness is not scored. Updated by claim-zcode-gf-zc-homepage-multi-agent-tagline (gap-fill 2026-08-16, Maria-adjudicated)."
+    }
+  ]
+}

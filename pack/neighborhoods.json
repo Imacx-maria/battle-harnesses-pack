@@ -1,0 +1,77 @@
+{
+  "pack_version": "2026-08-18+340a252a",
+  "neighborhoods": [
+    {
+      "id": "neighborhood-pi-lineage-terminal-runtimes",
+      "label": "Pi-lineage terminal runtimes",
+      "similarityBasis": "same-lineage-or-architecture",
+      "memberships": [
+        {
+          "projectId": "pi",
+          "surfaceId": "unknown",
+          "role": "same-lineage",
+          "evidenceClaimIds": [
+            "claim-pi-lineage-neighborhood",
+            "claim-atomic-pi-fork-lineage",
+            "claim-oh-my-pi-pi-fork-lineage",
+            "claim-prime-agent-pi-origin"
+          ],
+          "keyDifferences": [
+            "Pi is the lineage root and keeps a deliberately small core without built-in subagents, MCP, plan mode, permission popups, or background bash.",
+            "Membership proves lineage or architecture only, not feature parity or interchangeability."
+          ],
+          "confidence": "medium",
+          "reviewedAt": "2026-08-09"
+        },
+        {
+          "projectId": "atomic",
+          "surfaceId": "unknown",
+          "role": "same-lineage",
+          "evidenceClaimIds": [
+            "claim-atomic-lineage-neighborhood",
+            "claim-atomic-pi-fork-lineage",
+            "claim-atomic-primary-type-runtime"
+          ],
+          "keyDifferences": [
+            "Atomic adds versioned workflow graphs, verification gates, artifacts, bounded subagents, and DBOS/Postgres-backed durable replay.",
+            "Its workflow durability does not apply to every async subagent launch."
+          ],
+          "confidence": "medium",
+          "reviewedAt": "2026-08-09"
+        },
+        {
+          "projectId": "oh-my-pi",
+          "surfaceId": "unknown",
+          "role": "same-lineage",
+          "evidenceClaimIds": [
+            "claim-oh-my-pi-lineage-neighborhood",
+            "claim-oh-my-pi-pi-fork-lineage",
+            "claim-oh-my-pi-primary-type-runtime"
+          ],
+          "keyDifferences": [
+            "Oh My Pi adds a batteries-included coding path with native tools, optional memory, MCP, task agents, ACP, and collab relay routes.",
+            "Its default approval wording has an unresolved documentation conflict."
+          ],
+          "confidence": "medium",
+          "reviewedAt": "2026-08-09"
+        },
+        {
+          "projectId": "prime-agent",
+          "surfaceId": "unknown",
+          "role": "same-lineage",
+          "evidenceClaimIds": [
+            "claim-prime-agent-lineage-neighborhood",
+            "claim-prime-agent-pi-origin",
+            "claim-prime-agent-primary-type-runtime"
+          ],
+          "keyDifferences": [
+            "Prime Agent adds persistent IPython RLM control, Continual Harness state, resident daemon workers, recursive children, schedules, and goals.",
+            "Its baseline edge remains built_on Pi despite current historical hard-fork wording."
+          ],
+          "confidence": "medium",
+          "reviewedAt": "2026-08-09"
+        }
+      ]
+    }
+  ]
+}

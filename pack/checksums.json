@@ -1,0 +1,15 @@
+{
+  "pack_version": "2026-08-18+340a252a",
+  "generated_at": "2026-08-18T00:00:00.000Z",
+  "zip_filename": "battle-harnesses-pack-2026-08-18+340a252a.zip",
+  "zip_sha256": "c541708f9d9c12dad9f258d0a5f07a2aef68a164eaeca3f33b6df1c9614400e9",
+  "zip_bytes": 639917,
+  "zip_latest_filename": "battle-harnesses-pack-latest.zip",
+  "zip_latest_sha256": "c541708f9d9c12dad9f258d0a5f07a2aef68a164eaeca3f33b6df1c9614400e9",
+  "zip_latest_bytes": 639917,
+  "index_json_sha256": "575d1d15dde82c8786d469b09c1361a9cc0529a3cbd011b45c3eb3c4d8c2bad2",
+  "judged_version": "2026-08-17+no-s1s10",
+  "judged_md_sha256": "3420f07bbd2ae7a6a716cb00ba3be849f1bc9ae1057dce1bff87aa35a32ea01e",
+  "judged_md_bytes": 19915,
+  "note": "index.json cannot store a digest of its own bytes (self-reference); this sidecar carries both zip digests, index.json's, and judged.md's. zip_latest is a byte-identical stable-named alias of the versioned zip — same sha256, same bytes, by construction."
+}
