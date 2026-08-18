@@ -75,7 +75,10 @@ correct documentation is enough, and I will take a wrong line down without an
 argument. Products move fast and a corpus like this is out of date the moment
 it is written.
 
-If you would prefer not to be listed at all, say so and I will remove you.
+Correcting and delisting are not the same thing, and I only do the first.
+These are public products and this is public documentation of them; a guide
+that drops whoever objects is no use to the person reading it. So: anything
+wrong gets fixed, and an accurate line stays.
 
 ## Verifying what you downloaded
 
