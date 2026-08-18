@@ -1,5 +1,5 @@
 {
-  "pack_version": "2026-08-18+340a252a",
+  "pack_version": "2026-08-18+3e2dcc68",
   "title": "Battle Harnesses corpus pack field semantics",
   "derived_from": "research/schema/research-schema.md",
   "purpose": "Machine-readable field and label semantics for an agent reader. Condensed from the research schema; not a second source of product facts.",

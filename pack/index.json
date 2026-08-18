@@ -1,7 +1,7 @@
 {
-  "pack_version": "2026-08-18+340a252a",
+  "pack_version": "2026-08-18+3e2dcc68",
   "generated_at": "2026-08-18T00:00:00.000Z",
-  "generator": "generate-corpus-pack.mjs 1.2.0",
+  "generator": "generate-corpus-pack.mjs 1.3.0",
   "vocab_version": 2,
   "condition_vocabulary": [
     {
@@ -117,6 +117,18 @@
     }
   ],
   "judged_version": "2026-08-17+no-s1s10",
+  "url_templates": {
+    "site_root": "https://battle-harnesses.vercel.app/",
+    "product_page": "https://battle-harnesses.vercel.app/#/harnesses/{id}",
+    "compare": "https://battle-harnesses.vercel.app/#/compare",
+    "compare_preselect": "https://battle-harnesses.vercel.app/#/compare?ids={ids}",
+    "evidence_claim": "https://battle-harnesses.vercel.app/#/research/evidence?product={id}&claim={claim_id}",
+    "notes": [
+      "{id} is an exact product id from this index; {claim_id} is an exact claim_id from that product's pack file. Never reshape a display name into a slug.",
+      "{ids} is a comma-separated list of up to 4 product ids; the compare page preloads them into its tray. Ids whose compare_page_status in compare.json is deferred or inactive are ignored by the page — link only active ids.",
+      "evidence_claim opens the site's evidence ledger scoped to that product and claim, so a cited claim id in a generated report can resolve to its source row."
+    ]
+  },
   "counts": {
     "products": 36,
     "claims_total": 4124,
@@ -345,13 +357,18 @@
   ],
   "files": [
     {
+      "path": "compare.json",
+      "bytes": 78090,
+      "sha256": "ca1bc322a4aa14ea2b64cc27677affe6f671df6549933f889307cab6ad8a117a"
+    },
+    {
       "path": "contradictions.json",
       "bytes": 37844,
-      "sha256": "8e784fccddd2af51782cb62c7bf0289b65e5abda448b7f18719d30d00c722656"
+      "sha256": "0b10e8e05c8c877e3069d13e3fd296d475ae34694bde7ea1618dad31011118d1"
     },
     {
       "path": "index.json",
-      "bytes": 15987,
+      "bytes": 17127,
       "sha256": null
     },
     {
@@ -372,197 +389,197 @@
     {
       "path": "neighborhoods.json",
       "bytes": 2991,
-      "sha256": "83b07cdc04b69466fd7f693050b2af897233166471ca9a464f510363b7feb449"
+      "sha256": "4d7740514cdb9d6d3897c4464c50099aecb0f3f1b2b491d977da8c0d76bacbea"
     },
     {
       "path": "products/aider.json",
       "bytes": 53011,
-      "sha256": "3ccf80ebe5d43178f40d5975c12cb22cf11e98fa4ad4500684984d3e7ae00ebd"
+      "sha256": "082f37a8bae4b2ce52fe42488e271819430c9f94613a45c1e5ee68cdf9cf8fe9"
     },
     {
       "path": "products/amp.json",
       "bytes": 110958,
-      "sha256": "fef0eda6f64ccb4a2c8a2d829141fe14971e658f55feba837dbb247352e7390f"
+      "sha256": "71820d6c8e09b9e7222576e2d0a6b5948ef897a7357606d8a88add3ee8474c81"
     },
     {
       "path": "products/atomic.json",
       "bytes": 90877,
-      "sha256": "4a400a661ca297a307a707bb52bfab542dafff35821707e56862207d8e4c3327"
+      "sha256": "37a8743fdfc62a3e9af9bcb609ef8ac5dede6c7e46357995eb917ee15bfa0b3e"
     },
     {
       "path": "products/claude-code.json",
       "bytes": 98340,
-      "sha256": "b5fd27cf4a05f860f7d98e32455ea8c877f94c33a3bcef2e6d5c3e672e264f19"
+      "sha256": "d7b18f016eb2055d952924e4b2e34a1f646272f1dbd07256cd6d78417d4fb7a8"
     },
     {
       "path": "products/cline.json",
       "bytes": 116824,
-      "sha256": "8d47d8f5c099bd01732516a376c3b9b78e89b164fcc26ca0429bbd1dece9954c"
+      "sha256": "9fab7efce21b1887f74636792a4f817730692922930237c91d5cbe44550aecfd"
     },
     {
       "path": "products/codex-family.json",
       "bytes": 88600,
-      "sha256": "5531dfc7ff98426b725e5f5350799d5ef564720f78d9a7e134188cf2ef2a9856"
+      "sha256": "476cfed9b2ca6873128ad17f36afc67fbbe7503f80fdfa3506147a5e971b6c1f"
     },
     {
       "path": "products/conductor.json",
       "bytes": 131142,
-      "sha256": "b7ab0231b89ef2a1726ac179d3b8aae7cc61d903fc0867c033135c0032211592"
+      "sha256": "7ebcb92001e273e8ef29d58c32a0bda9f1c36d5d5183e4ee6a63a0878b0228f1"
     },
     {
       "path": "products/crush.json",
       "bytes": 95188,
-      "sha256": "a02552d334e335061ed58fa196b4d52d68d20f9bdfdd3a52062836bf801148f6"
+      "sha256": "afead1fc38556c1a1994e00fe44a164ff591761833e3c6b3eb60e5ab7c4620d7"
     },
     {
       "path": "products/cursor.json",
       "bytes": 167876,
-      "sha256": "33b703750cb1d25b0f0c0f920fccb6b2113544779c6a433ef6cf77ae6d27139e"
+      "sha256": "13a75430b38d939d17ba0ed72b51498ce6f46e986b74f59ee0ef42e2828dcaa6"
     },
     {
       "path": "products/deepseek-harness.json",
       "bytes": 108991,
-      "sha256": "b8d2a934b13987898b023d8620f17222afc584885faa29b773473335b48a7afb"
+      "sha256": "c90e7fcaae7848bc776c82caad2e364c9d1fcc2f81dbf24a2f8ec03435591a50"
     },
     {
       "path": "products/devin.json",
       "bytes": 132202,
-      "sha256": "a2309ad91e233b435fa22740aebc13393af7bb8e066f87e3afbfdf47f7e28a5b"
+      "sha256": "9f57c7e7b0cea3be22e62d068453a45069f04c0f8238c698e211565d1fef746e"
     },
     {
       "path": "products/factory-droids.json",
       "bytes": 134889,
-      "sha256": "bc7b2d8aac2431b71b2aa040a21040565b459cd6de3202282dad3d10ec4e6417"
+      "sha256": "f44c2c02187689857029abba1ecc1a35ec35a3a618166221dcf11d782c3bbb5c"
     },
     {
       "path": "products/gemini-cli.json",
       "bytes": 65100,
-      "sha256": "0e1958ab1f5f2b6fa906b901f62d93cb667c511ef9b3a1fe9f90d2c5420ef9f5"
+      "sha256": "85ae268cb401bcd97d6e824472e2d106f27089daef80aaa032ffdf2d18c13435"
     },
     {
       "path": "products/github-copilot.json",
       "bytes": 125700,
-      "sha256": "f499279512d40ed5b3aab9b7f7865c8d309414bca3b29ceb5abc42aceec84771"
+      "sha256": "184604d086909ec7e31c1d7041d6dbed8d55ab268a12cedd78ed8c63de761b4a"
     },
     {
       "path": "products/google-antigravity.json",
       "bytes": 127155,
-      "sha256": "d5e6e11fa3bf5b1109a73f342d25d201fc16abd1ed393d0a338758b3c6577da3"
+      "sha256": "9733fa06760d0182efdb909eb72717c3900f95822c22a485a33c97628b7cc7f4"
     },
     {
       "path": "products/goose.json",
       "bytes": 75900,
-      "sha256": "c60fb6b2c7a8a646ca44c5424cdda302833859a5c23308f4d93a712c4dc074a2"
+      "sha256": "4db85104eb8bd658c579fcbe05a50aea1e1368f19d7511f69c453281fae5afa5"
     },
     {
       "path": "products/grok-build.json",
       "bytes": 118269,
-      "sha256": "790df07440105af5fe76ef1e04c041bc809fa11c246e2085261b9050b26eb6a8"
+      "sha256": "634e8e84bce10148acbfd76bc12a6f4c7c83017bfd4cf05212c6d836a4bc430f"
     },
     {
       "path": "products/hermes-agent.json",
       "bytes": 61329,
-      "sha256": "1885c726fd9df8981ef933d200c24b2d81266e02e107f770212d605deaba3263"
+      "sha256": "2fa7ac3cb013497440544edb7a69182a17f7348185dfda0c316f97392872294b"
     },
     {
       "path": "products/jules.json",
       "bytes": 70299,
-      "sha256": "9b1bd100fc8593d7d4a90293576ffddbc4a434a87d02c320dcad51268da88819"
+      "sha256": "04dffce5d74b8abb4de3f155af9ed9903f64cd296ecc8851364c8748856da0e3"
     },
     {
       "path": "products/kilo-code.json",
       "bytes": 135417,
-      "sha256": "1e5585ac65f34d63dfd6aa248ef73e15809acf3799341f9a70beff5c4cc88911"
+      "sha256": "e37941e88e5762a5448a6f8f4635710721ed1cbe2ba764201b7d2fbd8c94bc12"
     },
     {
       "path": "products/kimi-code.json",
       "bytes": 177875,
-      "sha256": "5678b0a24b166ac4660e0f8e357f151bf7428e33e3632a1e4d7e3b9d0e3f357c"
+      "sha256": "6a220764c8798b75095f302a3eca76c6d43d06f5fdded08b06c8506d952654a1"
     },
     {
       "path": "products/kiro.json",
       "bytes": 131967,
-      "sha256": "5155beac8ce7609c015e346229ca56fad914738938f81408e9a899ac80525820"
+      "sha256": "d39e5c7a696b59d6a760e9504078fab098bc9aeb6a93c3f8de41eb0e34d8b25c"
     },
     {
       "path": "products/minimax-code.json",
       "bytes": 64680,
-      "sha256": "aa637533b38c10e99d85f6f7ee3cdde80e4f30d920f0b6e815ff35cb24f9ea9e"
+      "sha256": "18b026a9216436c7ee0f2f276fd34c84613e5df4cfd134138a43081597664b43"
     },
     {
       "path": "products/mistral-vibe.json",
       "bytes": 128357,
-      "sha256": "93a98b31a0c54e05d6e5f9212e97b989972688ae71ab5897b45c5909cebb4dc6"
+      "sha256": "a9b169081255b95a070231bae3384b5b2ddb79da268e2eb09281be7b4ec903a1"
     },
     {
       "path": "products/muse-code.json",
       "bytes": 39553,
-      "sha256": "6b87dd8378ad8fe04f7ea1f1d8de8d3614946c226102405f1b61501616ec6aa3"
+      "sha256": "43816f405b87b257f857a2a840e4067acc324aff163782ee3cfd36fc2bab933f"
     },
     {
       "path": "products/oh-my-pi.json",
       "bytes": 97959,
-      "sha256": "8efd0693c5a37d69087b0d34df8dbc4f6022938ff7822cb0ffa08bf6b593c7fe"
+      "sha256": "8a332ffddb9274f4c9673b3f57c82339acf274cda9293278873e60d5b82f8c21"
     },
     {
       "path": "products/openclaw.json",
       "bytes": 58167,
-      "sha256": "cd551467c80347f42ac5351bc295239068a8d7fa409be02581e936f41c0c7dd7"
+      "sha256": "e849a122fda07e00238a1b8bf7f3226b173ef1fd2e45cff285a04b0a7b93523a"
     },
     {
       "path": "products/opencode.json",
       "bytes": 73346,
-      "sha256": "8d9f8737ae5a186882e0e7cfacde985c036e27e6b474759f865ed370c33339d7"
+      "sha256": "e42ec0a25979cc7c2cdf0a96aceb50a4b2dcaca427128847f129f0feeb2ef8c8"
     },
     {
       "path": "products/openhands.json",
       "bytes": 153472,
-      "sha256": "e48795dbb3550ab58dfb19e17a17f7f0b630baa84a73026e1eb1c694169139e0"
+      "sha256": "4604c6441f951a87eae66d976a8448a62cfd950fea179bc933693343741c9838"
     },
     {
       "path": "products/pi.json",
       "bytes": 85670,
-      "sha256": "de266001b774b5da87356b6b64a60f78b3ca2a90fc05c1e9c21f4b4d79aecb01"
+      "sha256": "99993729d2b31862fdb5bd257cb6f4b73c5c4df204ccd9449250e14f4df449e6"
     },
     {
       "path": "products/prime-agent.json",
       "bytes": 100448,
-      "sha256": "5c86f6e0a1f100d135b11828a85080cdb2a06c17d8fb3c23299cbf3aac87543e"
+      "sha256": "b6b5a078aebe5ee92179e00c99dbb64a513605efc2db9de2a8aa52dd12160a83"
     },
     {
       "path": "products/qwen-code.json",
       "bytes": 142606,
-      "sha256": "ca090f9a91d47cbc60b3f4cbab4d6afea8402243d29cecebd627c00808750cca"
+      "sha256": "87b93e76e96305035dff68072eb8c0746a904ea008835dd068a564322857c4c8"
     },
     {
       "path": "products/replit-agent.json",
       "bytes": 112242,
-      "sha256": "02e5d15f81adcd32f6ada1575d729dc19360f9bed28e7494c4170fb77e30ca06"
+      "sha256": "c71db11207db25385efbd861f05dc043a96d10b98a6b3e836cd7a9a1e685b85c"
     },
     {
       "path": "products/symphony.json",
       "bytes": 75229,
-      "sha256": "1c81f037e9031763d454f018374fd627f4c4f474e3e0954e986d8aa97327c5a4"
+      "sha256": "106b074c14e47a647e16899d654743359e38589cb2893e492ac825f1909bb328"
     },
     {
       "path": "products/t3-code.json",
       "bytes": 126785,
-      "sha256": "e4610656957b9c54b99cb6878ca0f6fd68594f929a716a1a46674e4eaf456cd6"
+      "sha256": "e4eaff43b1f5f7b0c17307dfd057cf1ea7b322031a473079d991a9161e86f511"
     },
     {
       "path": "products/zcode.json",
       "bytes": 114232,
-      "sha256": "2b46e50b0b3410ad5a188ee26c7744ba5f79d4bb2caa0a6bd2afe0682a596c06"
+      "sha256": "2c870cb3aca9dffd8987a17f3adfd472b0c23f76d02a73a4b92a6d3e1c2f0444"
     },
     {
       "path": "relationships.json",
       "bytes": 17518,
-      "sha256": "6e6505275744213fb9e210ace57421fff862e0bbae1a076053f11f7afc8e683d"
+      "sha256": "7205eca4db41226513820ac2f43bf30ddf0ba4b4d4b7fb1236aee175a1a4a9c9"
     },
     {
       "path": "schema.json",
       "bytes": 11875,
-      "sha256": "8d3a65529ddbd238ef3dd4e4fc6284fc2e9308026afc4047a6278bb7fb43560f"
+      "sha256": "5f55977b3b4375be59732bf08e14b1ee2be72a8a03881a89aeba88fe456cfc53"
     }
   ],
   "honesty": {

@@ -1,0 +1,2802 @@
+{
+  "pack_version": "2026-08-18+3e2dcc68",
+  "purpose": "The live site's comparison matrix as data: row definitions plus per-product cells. Lets a report renderer draw cited capability dots for a scoped set of products instead of improvising cell values from raw claims.",
+  "reading_rules": [
+    "Rows without an explicit kind are state cells; kind=text cells carry a short value string instead of a state.",
+    "State cell values: s=supported, u=unsupported, k=unknown, n=not applicable. k means not established — never render or reason about it as a negative.",
+    "A cell's claimId resolves to a claim in that product's pack file; cite it (with reviewer_status) whenever the cell backs a verdict. A cell without a claimId licenses nothing.",
+    "remote_support maps remote_routes ids to the same state values.",
+    "compare_page_status describes the live site's compare page only: deep-link (url_templates.compare_preselect) ignores deferred and inactive ids. Cells of deferred products remain fully usable in a report.",
+    "This matrix is a subset of the claim ledger, not a second source of truth. On any conflict, the claim rows in products/*.json win."
+  ],
+  "cell_states": {
+    "s": "supported",
+    "u": "unsupported",
+    "k": "unknown — not established",
+    "n": "not applicable"
+  },
+  "groups": [
+    {
+      "id": "surface",
+      "label": "Surface",
+      "rows": [
+        {
+          "id": "primary",
+          "label": "Primary surface",
+          "kind": "text"
+        },
+        {
+          "id": "secondary",
+          "label": "Secondary surface",
+          "kind": "text"
+        }
+      ]
+    },
+    {
+      "id": "exec",
+      "label": "Execution",
+      "rows": [
+        {
+          "id": "loc",
+          "label": "Where code runs",
+          "kind": "text"
+        },
+        {
+          "id": "loop",
+          "label": "Owns agent loop"
+        },
+        {
+          "id": "sandbox",
+          "label": "Sandboxed by default"
+        }
+      ]
+    },
+    {
+      "id": "models",
+      "label": "Models & Auth",
+      "rows": [
+        {
+          "id": "byok",
+          "label": "Bring your own key"
+        },
+        {
+          "id": "sub",
+          "label": "Subscription reuse"
+        },
+        {
+          "id": "local",
+          "label": "Local models"
+        }
+      ]
+    },
+    {
+      "id": "orchestration",
+      "label": "Orchestration",
+      "rows": [
+        {
+          "id": "multi",
+          "label": "Multiple agents"
+        },
+        {
+          "id": "gates",
+          "label": "Human gates"
+        }
+      ]
+    },
+    {
+      "id": "remote",
+      "label": "Remote",
+      "expandable": true,
+      "rows": [
+        {
+          "id": "remote",
+          "label": "Remote access"
+        },
+        {
+          "id": "mobile",
+          "label": "Mobile app",
+          "hint": "Official iOS/Android app"
+        }
+      ]
+    },
+    {
+      "id": "price",
+      "label": "Price & License",
+      "rows": [
+        {
+          "id": "license",
+          "label": "License",
+          "kind": "text"
+        },
+        {
+          "id": "pricing",
+          "label": "Pricing model",
+          "kind": "text"
+        }
+      ]
+    }
+  ],
+  "remote_routes": [
+    {
+      "id": "client",
+      "label": "First-party remote client",
+      "short": "Remote Client"
+    },
+    {
+      "id": "relay",
+      "label": "Vendor relay",
+      "short": "Vendor Relay"
+    },
+    {
+      "id": "private",
+      "label": "Private network",
+      "short": "Private Network"
+    },
+    {
+      "id": "shell",
+      "label": "SSH / remote shell",
+      "short": "Remote Shell"
+    },
+    {
+      "id": "mterm",
+      "label": "Mobile terminal",
+      "short": "Mobile Terminal"
+    },
+    {
+      "id": "mweb",
+      "label": "Mobile web",
+      "short": "Mobile Web"
+    },
+    {
+      "id": "msg",
+      "label": "Messaging",
+      "short": "Messaging"
+    }
+  ],
+  "products": {
+    "aider": {
+      "compare_page_status": "active",
+      "cells": {
+        "license": {
+          "kind": "text",
+          "value": "Apache-2.0",
+          "claimId": "claim-aider-w2-license"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "aider owned price: unknown; provider costs: external",
+          "claimId": "claim-aider-w2-pricing"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "local repository execution",
+          "claimId": "claim-aider-w2-execution"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "terminal CLI, voice CLI",
+          "claimId": "claim-aider-w2-surface-cli-voice"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-aider-cmp-loop-supported"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-aider-cmp-human-gates"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-aider-cmp-byok"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-aider-cmp-local-models"
+        },
+        "mobile": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-aider-cmp-mobile"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-aider-cmp-subscription-reuse"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-aider-cmp-isolation-unsupported"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-aider-cmp-remote-unsupported"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "Aider voice-enabled CLI",
+          "claimId": "claim-aider-w2-surface-cli-voice"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "k",
+        "private": "k",
+        "shell": "k",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "k"
+      }
+    },
+    "amp": {
+      "compare_page_status": "active",
+      "cells": {
+        "secondary": {
+          "kind": "text",
+          "value": "cloud-agent",
+          "claimId": "claim-amp-sf-secondary-role-cloud"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "Amp CLI and TUI",
+          "claimId": "claim-amp-sf-surface-cli"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "same-device for default CLI",
+          "claimId": "claim-amp-sf-execution-local"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "Megawatt $20; Gigawatt $200; usage billing",
+          "claimId": "claim-amp-sf-pricing"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-amp-sf-tag-subagents"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-amp-sf-tag-remote-control"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-amp-sf-tag-subscription-reuse"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-amp-sf-tag-byok"
+        },
+        "license": {
+          "kind": "text",
+          "value": "amp.nvim Apache-2.0",
+          "claimId": "claim-amp-sf-license-nvim"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-amp-cmp-loop-supported"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-amp-cmp-sandbox"
+        },
+        "local": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-amp-cmp-local-unsupported"
+        }
+      },
+      "remote_support": {
+        "client": "s",
+        "relay": "k",
+        "private": "k",
+        "shell": "s",
+        "mterm": "k",
+        "mweb": "s",
+        "msg": "s"
+      }
+    },
+    "atomic": {
+      "compare_page_status": "active",
+      "cells": {
+        "secondary": {
+          "kind": "text",
+          "value": "orchestrator",
+          "claimId": "claim-atomic-secondary-role-orchestrator"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "same-device local process",
+          "claimId": "claim-atomic-local-execution"
+        },
+        "license": {
+          "kind": "text",
+          "value": "MIT with additional high-scale display condition",
+          "claimId": "claim-atomic-license-terms"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "k",
+          "claimId": "claim-atomic-vendor-relay-unknown"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "surface-atomic-cli",
+          "claimId": "claim-atomic-surface-cli"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-atomic-cmp-loop-supported"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-atomic-cmp-isolation-unsupported"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-atomic-cmp-byok"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-atomic-cmp-subscription-reuse"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-atomic-cmp-local-models"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-atomic-cmp-subagents"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "$0",
+          "claimId": "claim-atomic-cmp-pricing-zero"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "k",
+        "private": "k",
+        "shell": "k",
+        "mterm": "s",
+        "mweb": "k",
+        "msg": "k"
+      }
+    },
+    "claude-code": {
+      "compare_page_status": "active",
+      "cells": {
+        "license": {
+          "kind": "text",
+          "value": "Commercial Terms of Service and Privacy Policy; separate open-source license not established",
+          "claimId": "claim-claude-code-w2-license-terms"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "Pro: $17 annual or $20 monthly; Max: from $100; Team standard: $20 annual or $25 monthly per seat; Team premium: $100 annual or $125 monthly per seat",
+          "claimId": "claim-claude-code-w2-pricing-page"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "local: same-device; cloud: vendor-cloud, user-controlled-remote-machine; remote control: same-device",
+          "claimId": "claim-claude-code-w2-execution-topology"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "CLI, VS Code, JetBrains, Desktop local",
+          "claimId": "claim-claude-code-w2-surface-local-clients"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-claude-code-cmp-subscription-reuse"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-claude-code-cmp-loop-supported"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-claude-code-cmp-sandbox"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-claude-code-cmp-remote-control"
+        },
+        "mobile": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-claude-code-cmp-mobile"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-claude-code-cmp-local-models"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-claude-code-cmp-byok"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-claude-code-cmp-subagents"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-claude-code-cmp-human-gates"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "Claude Code CLI cloud dispatch",
+          "claimId": "claim-claude-code-w2-surface-cloud-web"
+        }
+      },
+      "remote_support": {
+        "client": "s",
+        "relay": "s",
+        "private": "k",
+        "shell": "s",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "s"
+      }
+    },
+    "cline": {
+      "compare_page_status": "active",
+      "cells": {
+        "secondary": {
+          "kind": "text",
+          "value": "ide",
+          "claimId": "claim-cline-sf-secondary-role-ide"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "same-device local execution by default",
+          "claimId": "claim-cline-sf-execution-local"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "VS Code-compatible IDE extension",
+          "claimId": "claim-cline-sf-surface-vscode"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "free client; pay for inference or BYOK",
+          "claimId": "claim-cline-sf-pricing-oss"
+        },
+        "license": {
+          "kind": "text",
+          "value": "Apache-2.0 for the public repo; JetBrains plugin not open-sourced",
+          "claimId": "claim-cline-sf-license"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-cline-sf-tag-byok"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-cline-sf-tag-local-models"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-cline-sf-tag-subagents"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-cline-sf-tag-human-gates"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-cline-sf-tag-subscription-reuse"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-cline-cmp-loop-supported"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-cline-cmp-isolation-unsupported"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-cline-sf-surface-connectors"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "k",
+        "private": "k",
+        "shell": "k",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "s"
+      }
+    },
+    "codex-family": {
+      "compare_page_status": "active",
+      "cells": {
+        "license": {
+          "kind": "text",
+          "value": "Apache-2.0",
+          "claimId": "claim-codex-family-w2-license-cli"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "Free: $0; Go: $8; Plus: $20; Pro: from $100; Business: $20 annual or $25 monthly; Enterprise and Edu: contact sales",
+          "claimId": "claim-codex-family-w2-pricing"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "connected computer, SSH host",
+          "claimId": "claim-codex-family-w2-execution-topology"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "interactive CLI, codex exec",
+          "claimId": "claim-codex-family-w2-surface-cli"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-codex-family-cmp-remote-control"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-codex-family-cmp-loop-supported"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-codex-family-cmp-byok"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-codex-family-cmp-subscription-reuse"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-codex-family-cmp-local-models"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-codex-family-cmp-subagents"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "Codex CLI exec automation",
+          "claimId": "claim-codex-family-w2-surface-cli"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "s",
+        "private": "k",
+        "shell": "s",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "s"
+      }
+    },
+    "conductor": {
+      "compare_page_status": "active",
+      "cells": {
+        "secondary": {
+          "kind": "text",
+          "value": "orchestrator",
+          "claimId": "claim-conductor-sf-secondary-role-orchestrator"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "same-device macOS for local workspaces",
+          "claimId": "claim-conductor-sf-execution-local"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "macos-desktop-local",
+          "claimId": "claim-conductor-sf-surface-macos-local"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "free usd: 0; pro usd per month: 50; teams usd per user per month: 60; enterprise: custom",
+          "claimId": "claim-conductor-sf-pricing-plans"
+        },
+        "license": {
+          "kind": "text",
+          "value": "proprietary commercial terms",
+          "claimId": "claim-conductor-sf-license"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-conductor-sf-tag-parallel-agents"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-conductor-sf-tag-subscription-reuse"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-conductor-sf-tag-byok"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-conductor-sf-tag-human-gates"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-conductor-sf-tag-sandbox-cloud"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-conductor-sf-tag-remote-control"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-conductor-cmp-loop-unsupported"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-conductor-cmp-local-models"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "s",
+        "private": "k",
+        "shell": "s",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "k"
+      }
+    },
+    "crush": {
+      "compare_page_status": "active",
+      "cells": {
+        "loc": {
+          "kind": "text",
+          "value": "same-device current working directory",
+          "claimId": "claim-crush-sf-execution-local"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "crush terminal TUI and CLI",
+          "claimId": "claim-crush-sf-surface-cli"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "k",
+          "claimId": "claim-crush-sf-isolation"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "installable binary; Hyper optional and billed separately",
+          "claimId": "claim-crush-sf-pricing"
+        },
+        "license": {
+          "kind": "text",
+          "value": "FSL-1.1-MIT",
+          "claimId": "claim-crush-sf-license"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-crush-sf-tag-byok"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-crush-sf-tag-local-models"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-crush-sf-tag-subscription-reuse"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-crush-sf-tag-human-gates"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-crush-sf-tag-subagents"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-crush-cmp-loop-supported"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "Crush on an Android terminal",
+          "claimId": "claim-crush-sf-surface-android"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-crush-sf-surface-android"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "k",
+        "private": "k",
+        "shell": "s",
+        "mterm": "s",
+        "mweb": "k",
+        "msg": "k"
+      }
+    },
+    "cursor": {
+      "compare_page_status": "active",
+      "cells": {
+        "secondary": {
+          "kind": "text",
+          "value": "cloud-agent",
+          "claimId": "claim-cursor-sf-secondary-role-cloud-agent"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "same-device for desktop Agent tool execution",
+          "claimId": "claim-cursor-sf-execution-local"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "native desktop editor",
+          "claimId": "claim-cursor-sf-surface-desktop"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "Hobby free; Individual $20/mo; Teams $40/user/mo; Enterprise custom",
+          "claimId": "claim-cursor-sf-pricing-page"
+        },
+        "license": {
+          "kind": "text",
+          "value": "proprietary commercial Terms of Service",
+          "claimId": "claim-cursor-sf-license"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-cursor-sf-tag-vendor-relay"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-cursor-sf-tag-byok"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-cursor-sf-tag-subagents"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-cursor-sf-tag-sandbox"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-cursor-sf-tag-human-gates"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-cursor-cmp-loop-supported"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-cursor-cmp-subscription-reuse-unsupported"
+        },
+        "local": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-cursor-cmp-local-unsupported"
+        },
+        "mobile": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-cursor-cmp-mobile"
+        }
+      },
+      "remote_support": {
+        "client": "s",
+        "relay": "s",
+        "private": "s",
+        "shell": "s",
+        "mterm": "k",
+        "mweb": "s",
+        "msg": "s"
+      }
+    },
+    "deepseek-harness": {
+      "compare_page_status": "active",
+      "cells": {
+        "loc": {
+          "kind": "text",
+          "value": "user-controlled local workspace",
+          "claimId": "claim-deepseek-harness-sf-execution-location"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "first-party local Web UI via dsh web",
+          "claimId": "claim-deepseek-harness-sf-surface-web"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "unknown harness seat price; npx or source clone",
+          "claimId": "claim-deepseek-harness-sf-pricing"
+        },
+        "license": {
+          "kind": "text",
+          "value": "MIT",
+          "claimId": "claim-deepseek-harness-sf-license"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-deepseek-harness-sf-cap-byok"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-deepseek-harness-sf-cap-subagents"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-deepseek-harness-sf-cap-sandbox"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-deepseek-harness-cmp-loop-supported"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-deepseek-harness-cmp-human-gates"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-deepseek-harness-cmp-remote-unsupported"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "dsh headless CLI",
+          "claimId": "claim-deepseek-harness-sf-surface-cli-headless"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "k",
+        "private": "k",
+        "shell": "k",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "k"
+      }
+    },
+    "devin": {
+      "compare_page_status": "active",
+      "cells": {
+        "license": {
+          "kind": "text",
+          "value": "proprietary-saas",
+          "claimId": "claim-devin-sf-what-it-is-not-oss"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "ide",
+          "claimId": "claim-devin-sf-secondary-ide"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "vendor-cloud-linux-vm",
+          "claimId": "claim-devin-sf-execution-linux-vm"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "https://app.devin.ai",
+          "claimId": "claim-devin-sf-surface-web"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "free: 0; pro usd per month: 20; max usd per month: 200; teams minimum usd per month: 80; teams full seat usd per month: 40; enterprise: custom",
+          "claimId": "claim-devin-sf-pricing"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-devin-sf-tag-remote-machine"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-devin-sf-tag-subagents"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-devin-sf-tag-sandbox"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-devin-sf-tag-human-gates"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-devin-cmp-loop-supported"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-devin-cmp-byok-unsupported"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "s",
+        "private": "k",
+        "shell": "s",
+        "mterm": "k",
+        "mweb": "s",
+        "msg": "s"
+      }
+    },
+    "factory-droids": {
+      "compare_page_status": "active",
+      "cells": {
+        "license": {
+          "kind": "text",
+          "value": "all-rights-reserved",
+          "claimId": "claim-factory-droids-sf-not-open-source"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "orchestrator",
+          "claimId": "claim-factory-droids-sf-secondary-orchestrator"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "user-controlled-remote-machine, vendor-cloud",
+          "claimId": "claim-factory-droids-sf-execution-location"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "interactive Droid CLI",
+          "claimId": "claim-factory-droids-sf-surface-cli"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "$20/month",
+          "claimId": "claim-factory-droids-cmp-pricing"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-factory-droids-sf-tag-remote-machine"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-factory-droids-sf-tag-byok"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-factory-droids-sf-tag-local-models"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-factory-droids-sf-tag-subagents"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-factory-droids-sf-tag-sandbox"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-factory-droids-sf-tag-human-gates"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-factory-droids-cmp-loop-supported"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-factory-droids-cmp-subscription-reuse"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "s",
+        "private": "k",
+        "shell": "k",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "s"
+      }
+    },
+    "gemini-cli": {
+      "compare_page_status": "inactive",
+      "cells": {
+        "license": {
+          "kind": "text",
+          "value": "Apache-2.0",
+          "claimId": "claim-gemini-cli-w2-license"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "local runtime and tools; Google model service",
+          "claimId": "claim-gemini-cli-w2-execution"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "interactive CLI, headless CLI",
+          "claimId": "claim-gemini-cli-w2-surface-cli"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-gemini-cli-cmp-loop-supported"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-gemini-cli-cmp-sandbox"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-gemini-cli-cmp-byok"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-gemini-cli-cmp-subagents"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-gemini-cli-cmp-human-gates"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "$0",
+          "claimId": "claim-gemini-cli-cmp-pricing-zero"
+        },
+        "local": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-gemini-cli-cmp-local-unsupported"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "Gemini CLI headless and stream-JSON",
+          "claimId": "claim-gemini-cli-w2-surface-cli"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "k",
+        "private": "k",
+        "shell": "k",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "k"
+      }
+    },
+    "github-copilot": {
+      "compare_page_status": "active",
+      "cells": {
+        "secondary": {
+          "kind": "text",
+          "value": "ide",
+          "claimId": "claim-github-copilot-sf-secondary-role-ide"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "same-device for default CLI tool execution",
+          "claimId": "claim-github-copilot-sf-execution-local"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "GitHub Copilot CLI (copilot)",
+          "claimId": "claim-github-copilot-sf-surface-cli"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "Free; Student free; Pro $10; Pro+ $39; Max $100; Business $19/seat; Enterprise $39/seat",
+          "claimId": "claim-github-copilot-sf-pricing-docs"
+        },
+        "license": {
+          "kind": "text",
+          "value": "proprietary GitHub Copilot CLI license",
+          "claimId": "claim-github-copilot-sf-license"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-github-copilot-sf-tag-remote-control"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-github-copilot-sf-tag-sandbox"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-github-copilot-cmp-subagents"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-github-copilot-cmp-loop-supported"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-github-copilot-cmp-byok"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-github-copilot-cmp-subscription-reuse"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-github-copilot-cmp-human-gates"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-github-copilot-cmp-local-models"
+        },
+        "mobile": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-github-copilot-cmp-mobile"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "s",
+        "private": "k",
+        "shell": "k",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "s"
+      }
+    },
+    "google-antigravity": {
+      "compare_page_status": "active",
+      "cells": {
+        "primary": {
+          "kind": "text",
+          "value": "CLI docs call 2.0 a visual desktop editor/IDE",
+          "claimId": "claim-google-antigravity-sf-cli-calls-2-ide"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "ide",
+          "claimId": "claim-google-antigravity-sf-secondary-role-ide"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "same-device folders or local Git worktrees",
+          "claimId": "claim-google-antigravity-sf-execution-local"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "Individual $0/mo; Pro and Ultra unspecified dollars; Cloud org plan",
+          "claimId": "claim-google-antigravity-sf-pricing-page"
+        },
+        "license": {
+          "kind": "text",
+          "value": "proprietary Google Terms plus Additional Terms",
+          "claimId": "claim-google-antigravity-sf-license-product"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-google-antigravity-sf-tag-subagents"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-google-antigravity-sf-tag-sandbox"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-google-antigravity-sf-tag-human-gates"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-google-antigravity-cmp-remote-control"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-google-antigravity-cmp-byok"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-google-antigravity-cmp-subscription-reuse"
+        },
+        "mobile": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-google-antigravity-cmp-mobile"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-google-antigravity-cmp-loop-supported"
+        },
+        "local": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-google-antigravity-cmp-local-models"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "k",
+        "private": "k",
+        "shell": "s",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "k"
+      }
+    },
+    "goose": {
+      "compare_page_status": "active",
+      "cells": {
+        "license": {
+          "kind": "text",
+          "value": "code: Apache-2.0; specifications: Apache-2.0; documentation: CC-BY-4.0",
+          "claimId": "claim-goose-w2-license"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "unknown Goose price; provider costs external",
+          "claimId": "claim-goose-w2-pricing"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "same-device, user-controlled remote machine",
+          "claimId": "claim-goose-w2-execution"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "CLI, Desktop local",
+          "claimId": "claim-goose-w2-surface-cli-desktop"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-goose-cmp-loop-supported"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-goose-cmp-byok"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-goose-cmp-local-models"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-goose-cmp-subagents"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-goose-cmp-human-gates"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-goose-cmp-isolation-unsupported"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-goose-cmp-subscription-reuse"
+        },
+        "mobile": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-goose-cmp-mobile"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "Goose Desktop local backend",
+          "claimId": "claim-goose-w2-surface-cli-desktop"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-goose-w2-surface-remote-desktop"
+        }
+      },
+      "remote_support": {
+        "client": "s",
+        "relay": "k",
+        "private": "s",
+        "shell": "k",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "s"
+      }
+    },
+    "grok-build": {
+      "compare_page_status": "active",
+      "cells": {
+        "primary": {
+          "kind": "text",
+          "value": "interactive grok TUI",
+          "claimId": "claim-grok-build-sf-surface-tui"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "local user machine",
+          "claimId": "claim-grok-build-sf-execution-location"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-grok-build-sf-cap-subagents"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-grok-build-sf-cap-sandbox"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-grok-build-sf-cap-human-gates"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "try for free on current product page",
+          "claimId": "claim-grok-build-sf-pricing"
+        },
+        "license": {
+          "kind": "text",
+          "value": "Apache-2.0",
+          "claimId": "claim-grok-build-sf-license"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-grok-build-sf-cap-byok"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-grok-build-cmp-vendor-relay"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-grok-build-cmp-loop-supported"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "Grok Build headless CLI",
+          "claimId": "claim-grok-build-sf-surface-headless"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "s",
+        "private": "k",
+        "shell": "s",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "k"
+      }
+    },
+    "hermes-agent": {
+      "compare_page_status": "deferred",
+      "cells": {
+        "license": {
+          "kind": "text",
+          "value": "MIT",
+          "claimId": "claim-hermes-agent-sf-license"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "user-controlled host plus optional remote or container backends",
+          "claimId": "claim-hermes-agent-sf-execution-location"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-hermes-agent-sf-byok"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-hermes-agent-sf-local-models"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-hermes-agent-sf-tag-sandbox"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-hermes-agent-sf-remote-access"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "messaging-channel gateway",
+          "claimId": "claim-hermes-agent-sf-messaging"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "Portal Free $0 / Plus $20 / Super $100 / Ultra $200 (optional inference; agent is MIT)",
+          "claimId": "claim-hermes-agent-sf-pricing"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "k",
+        "private": "k",
+        "shell": "k",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "k"
+      }
+    },
+    "jules": {
+      "compare_page_status": "deferred",
+      "cells": {
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-jules-sf-isolation-fresh-vm"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "vendor Cloud VM",
+          "claimId": "claim-jules-sf-execution-location"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-jules-sf-agent-loop-owner"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "web",
+          "claimId": "claim-jules-sf-surface-web"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "$0 free seat (15/3) + Google AI Pro $19.99 (100/15) + Google AI Ultra $100/$200 (300/60)",
+          "claimId": "claim-jules-sf-pricing"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-jules-sf-byok"
+        },
+        "local": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-jules-sf-local-models"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-jules-sf-subscription-reuse"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-jules-cmp-parallel-agents"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-jules-cmp-human-gates"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-jules-cmp-remote-access"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "k",
+        "private": "k",
+        "shell": "k",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "k"
+      }
+    },
+    "kilo-code": {
+      "compare_page_status": "active",
+      "cells": {
+        "secondary": {
+          "kind": "text",
+          "value": "ide",
+          "claimId": "claim-kilo-code-sf-secondary-role-ide"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "VS Code extension",
+          "claimId": "claim-kilo-code-sf-surface-vscode"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "same-device VS Code files and terminal",
+          "claimId": "claim-kilo-code-sf-execution-local"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "free individual platform; Teams $15; Pass from $19; 5% credit fee; usage compute",
+          "claimId": "claim-kilo-code-sf-pricing"
+        },
+        "license": {
+          "kind": "text",
+          "value": "MIT",
+          "claimId": "claim-kilo-code-sf-license"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-kilo-code-sf-tag-byok"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-kilo-code-sf-tag-local-models"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-kilo-code-sf-tag-subscription-reuse"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-kilo-code-sf-tag-subagents"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-kilo-code-sf-tag-sandbox"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-kilo-code-sf-tag-human-gates"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-kilo-code-sf-tag-remote-control"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-kilo-code-cmp-loop-supported"
+        },
+        "mobile": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-kilo-code-cmp-mobile"
+        }
+      },
+      "remote_support": {
+        "client": "s",
+        "relay": "s",
+        "private": "k",
+        "shell": "k",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "s"
+      }
+    },
+    "kimi-code": {
+      "compare_page_status": "deferred",
+      "cells": {
+        "license": {
+          "kind": "text",
+          "value": "Apache-2.0",
+          "claimId": "claim-kimi-code-nw-license"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "same-device local execution",
+          "claimId": "claim-kimi-code-nw-execution-local"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "kimi interactive shell",
+          "claimId": "claim-kimi-code-nw-surface-shell"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "k",
+          "claimId": "claim-kimi-code-nw-remote-access"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "subscription plans; prices unknown",
+          "claimId": "claim-kimi-code-nw-pricing"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-kimi-code-nw-tag-byok"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-kimi-code-nw-tag-subscription-reuse"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-kimi-code-nw-tag-subagents"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-kimi-code-nw-tag-human-gates"
+        },
+        "mobile": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-kimi-code-sf-mobile"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "kimi --print non-interactive mode",
+          "claimId": "claim-kimi-code-nw-api-print-mode"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "k",
+        "private": "k",
+        "shell": "k",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "k"
+      }
+    },
+    "kiro": {
+      "compare_page_status": "deferred",
+      "cells": {
+        "secondary": {
+          "kind": "text",
+          "value": "cloud-agent",
+          "claimId": "claim-kiro-nw-secondary-role"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "native desktop IDE",
+          "claimId": "claim-kiro-nw-surface-ide"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "same-device default",
+          "claimId": "claim-kiro-nw-execution-local"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "credit plans plus $0.04 credits",
+          "claimId": "claim-kiro-nw-pricing"
+        },
+        "license": {
+          "kind": "text",
+          "value": "Apache-2.0 for Crew",
+          "claimId": "claim-kiro-nw-license-crew"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-kiro-nw-tag-subagents"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-kiro-nw-tag-sandbox"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-kiro-nw-tag-human-gates"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-kiro-nw-tag-remote-control"
+        },
+        "mobile": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-kiro-cmp-mobile"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-kiro-sf-loop-supported"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-kiro-cmp-byok"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-kiro-cmp-subscription-reuse"
+        },
+        "local": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-kiro-cmp-local-models"
+        }
+      },
+      "remote_support": {
+        "client": "s",
+        "relay": "k",
+        "private": "k",
+        "shell": "s",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "s"
+      }
+    },
+    "minimax-code": {
+      "compare_page_status": "deferred",
+      "cells": {
+        "primary": {
+          "kind": "text",
+          "value": "Official CLI is mcode (TUI, exec, ACP); macOS/Windows/Linux",
+          "claimId": "claim-minimax-code-sf-cli"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-minimax-code-sf-byok"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "Agent works on an attached local project; local runtime + local data dir",
+          "claimId": "claim-minimax-code-sf-local-workspace"
+        },
+        "license": {
+          "kind": "text",
+          "value": "proprietary / all-rights-reserved",
+          "claimId": "claim-minimax-code-sf-license-arr"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "Token Plan Plus $20 / Max $50 / Ultra $70-$120 per month (seat). Not $0. Ultra disagrees: $70 on download vs $120 on Token Plan docs.",
+          "claimId": "claim-minimax-code-sf-pricing-token-plan"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "k",
+        "private": "k",
+        "shell": "k",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "k"
+      }
+    },
+    "mistral-vibe": {
+      "compare_page_status": "deferred",
+      "cells": {
+        "license": {
+          "kind": "text",
+          "value": "Apache-2.0",
+          "claimId": "claim-mistral-vibe-nw-license"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "cli, vscode-extension, vibe-code-web, acp-clients",
+          "claimId": "claim-mistral-vibe-nw-what-it-is-surfaces"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "same-device local tree",
+          "claimId": "claim-mistral-vibe-nw-execution-local"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "pro usd month: 14.99; team usd user month: 24.99",
+          "claimId": "claim-mistral-vibe-nw-pricing"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-mistral-vibe-nw-tag-byok"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-mistral-vibe-nw-tag-local-models"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-mistral-vibe-nw-tag-subscription-reuse"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-mistral-vibe-nw-tag-subagents"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-mistral-vibe-nw-tag-human-gates"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-mistral-vibe-nw-tag-sandbox"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-mistral-vibe-nw-tag-remote-control"
+        },
+        "mobile": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-mistral-vibe-cmp-mobile"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "vibe --prompt programmatic CLI",
+          "claimId": "claim-mistral-vibe-nw-surface-programmatic"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "s",
+        "private": "k",
+        "shell": "k",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "s"
+      }
+    },
+    "muse-code": {
+      "compare_page_status": "deferred",
+      "cells": {
+        "secondary": {
+          "kind": "text",
+          "value": "runtime with CI",
+          "claimId": "claim-muse-code-sf-secondary-role"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "TUI muse",
+          "claimId": "claim-muse-code-sf-surface-tui"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "local binary + Meta Model API",
+          "claimId": "claim-muse-code-sf-execution-location"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "k",
+          "claimId": "claim-muse-code-sf-byok"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "k",
+          "claimId": "claim-muse-code-sf-subscription-reuse"
+        },
+        "local": {
+          "kind": "state",
+          "value": "k",
+          "claimId": "claim-muse-code-sf-local-models"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-muse-code-sf-tag-sandbox"
+        },
+        "mobile": {
+          "kind": "state",
+          "value": "k",
+          "claimId": "claim-muse-code-sf-mobile"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "Spark token pricing",
+          "claimId": "claim-muse-code-sf-pricing"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "k",
+        "private": "k",
+        "shell": "k",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "k"
+      }
+    },
+    "oh-my-pi": {
+      "compare_page_status": "active",
+      "cells": {
+        "license": {
+          "kind": "text",
+          "value": "MIT",
+          "claimId": "claim-oh-my-pi-license-mit"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "price: 0; currency: USD; scope: omp.sh product offer",
+          "claimId": "claim-oh-my-pi-pricing"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "same-device local process",
+          "claimId": "claim-oh-my-pi-local-execution"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "surface-oh-my-pi-collab-web",
+          "claimId": "claim-oh-my-pi-collab-web"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-oh-my-pi-cmp-byok"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-oh-my-pi-cmp-local-models"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-oh-my-pi-cmp-subagents"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-oh-my-pi-cmp-vendor-relay"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-oh-my-pi-cmp-human-gates"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "omp one-shot prompt CLI",
+          "claimId": "claim-oh-my-pi-entrypoints"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "s",
+        "private": "k",
+        "shell": "k",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "k"
+      }
+    },
+    "openclaw": {
+      "compare_page_status": "deferred",
+      "cells": {
+        "license": {
+          "kind": "text",
+          "value": "MIT",
+          "claimId": "claim-openclaw-sf-license"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "local Gateway host; tools on host unless sandbox enabled",
+          "claimId": "claim-openclaw-sf-execution-location"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-openclaw-sf-byok"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-openclaw-sf-local-models"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-openclaw-sf-tag-sandbox"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-openclaw-sf-remote-access"
+        },
+        "mobile": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-openclaw-sf-mobile"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "Gateway plus Control UI, CLI, and TUI clients",
+          "claimId": "claim-openclaw-sf-surface-gateway"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "control-plane",
+          "claimId": "claim-openclaw-sf-secondary-role"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-openclaw-sf-subscription-reuse"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "k",
+        "private": "k",
+        "shell": "k",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "k"
+      }
+    },
+    "opencode": {
+      "compare_page_status": "active",
+      "cells": {
+        "license": {
+          "kind": "text",
+          "value": "MIT",
+          "claimId": "claim-opencode-w2-license"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "runtime license free of stated fee; provider and hosted service costs separate",
+          "claimId": "claim-opencode-w2-pricing"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "same-device local process",
+          "claimId": "claim-opencode-w2-execution"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "k",
+          "claimId": "claim-opencode-w2-mobile-messaging-relay-unknown"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "CLI TUI, CLI run",
+          "claimId": "claim-opencode-w2-surface-cli"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-opencode-cmp-loop-supported"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-opencode-cmp-isolation-unsupported"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-opencode-cmp-byok"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-opencode-cmp-local-models"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-opencode-cmp-subscription-reuse"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-opencode-cmp-human-gates"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-opencode-cmp-parallel-agents"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "OpenCode non-interactive run",
+          "claimId": "claim-opencode-w2-surface-cli"
+        }
+      },
+      "remote_support": {
+        "client": "s",
+        "relay": "k",
+        "private": "k",
+        "shell": "k",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "k"
+      }
+    },
+    "openhands": {
+      "compare_page_status": "active",
+      "cells": {
+        "secondary": {
+          "kind": "text",
+          "value": "control-plane",
+          "claimId": "claim-openhands-sf-secondary-control-plane"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "local-host or local-docker",
+          "claimId": "claim-openhands-sf-execution-local"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "surface-openhands-agent-canvas-local",
+          "claimId": "claim-openhands-sf-surface-canvas-local"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "local: free; saas-individual: free-byok-or-at-cost; enterprise: custom; individual-limits: 1-user-10-daily-conversations",
+          "claimId": "claim-openhands-sf-pricing"
+        },
+        "license": {
+          "kind": "text",
+          "value": "MIT",
+          "claimId": "claim-openhands-sf-license-mit"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-openhands-sf-capability-remote-machine"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-openhands-sf-capability-byok"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-openhands-sf-capability-local-models"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-openhands-sf-capability-subscription-reuse"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-openhands-sf-capability-sandbox"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-openhands-sf-capability-human-gates"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-openhands-sf-capability-subagents"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-openhands-cmp-loop-supported"
+        }
+      },
+      "remote_support": {
+        "client": "s",
+        "relay": "s",
+        "private": "s",
+        "shell": "s",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "s"
+      }
+    },
+    "pi": {
+      "compare_page_status": "active",
+      "cells": {
+        "loc": {
+          "kind": "text",
+          "value": "same-device local process",
+          "claimId": "claim-pi-local-execution"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-pi-local-model-support"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "k",
+          "claimId": "claim-pi-vendor-relay-unknown"
+        },
+        "license": {
+          "kind": "text",
+          "value": "MIT",
+          "claimId": "claim-pi-license-mit"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-pi-cmp-loop-supported"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-pi-cmp-isolation-unsupported"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-pi-cmp-byok"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-pi-cmp-subscription-reuse"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-pi-cmp-gates-unsupported"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "$0",
+          "claimId": "claim-pi-cmp-pricing-zero"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "Pi interactive CLI",
+          "claimId": "claim-pi-minimal-terminal-positioning"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "Pi print/JSON CLI",
+          "claimId": "claim-pi-api-modes"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "k",
+        "private": "k",
+        "shell": "k",
+        "mterm": "s",
+        "mweb": "k",
+        "msg": "k"
+      }
+    },
+    "prime-agent": {
+      "compare_page_status": "active",
+      "cells": {
+        "license": {
+          "kind": "text",
+          "value": "MIT",
+          "claimId": "claim-prime-agent-license-mit"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "same-device local processes plus selected provider endpoint",
+          "claimId": "claim-prime-agent-local-execution"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "orchestrator",
+          "claimId": "claim-prime-agent-secondary-role-orchestrator"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "k",
+          "claimId": "claim-prime-agent-vendor-relay-unknown"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "provider-specific",
+          "claimId": "claim-prime-agent-provider-costs"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "surface-prime-agent-cli",
+          "claimId": "claim-prime-agent-surface-cli"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "k",
+          "claimId": "claim-prime-agent-default-approval-unknown"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-prime-agent-cmp-loop-supported"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-prime-agent-cmp-isolation-unsupported"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-prime-agent-cmp-byok"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-prime-agent-cmp-subscription-reuse"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-prime-agent-cmp-local-models"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "k",
+        "private": "k",
+        "shell": "k",
+        "mterm": "s",
+        "mweb": "k",
+        "msg": "k"
+      }
+    },
+    "qwen-code": {
+      "compare_page_status": "active",
+      "cells": {
+        "license": {
+          "kind": "text",
+          "value": "Apache-2.0",
+          "claimId": "claim-qwen-code-sf-license"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "interactive CLI (qwen)",
+          "claimId": "claim-qwen-code-sf-surface-cli"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "same-device by default",
+          "claimId": "claim-qwen-code-sf-execution-local"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "Coding Plan subscription / Token Plan usage / BYO API key; amounts unknown here",
+          "claimId": "claim-qwen-code-sf-pricing"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "control-plane",
+          "claimId": "claim-qwen-code-sf-secondary-role-control-plane"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-qwen-code-sf-tag-subagents"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-qwen-code-sf-tag-sandbox"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-qwen-code-sf-tag-local-models"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-qwen-code-sf-tag-human-gates"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-qwen-code-sf-tag-byok"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-qwen-code-cmp-loop-supported"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-qwen-code-cmp-remote-unsupported"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-qwen-code-cmp-subscription-reuse"
+        },
+        "mobile": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-qwen-code-cmp-mobile"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "k",
+        "private": "k",
+        "shell": "k",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "s"
+      }
+    },
+    "replit-agent": {
+      "compare_page_status": "deferred",
+      "cells": {
+        "secondary": {
+          "kind": "text",
+          "value": "runtime",
+          "claimId": "claim-replit-agent-nw-r-secondary-runtime"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "vendor cloud workspace",
+          "claimId": "claim-replit-agent-nw-r-execution-location"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "web Project Editor",
+          "claimId": "claim-replit-agent-nw-r-surface-web"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "Starter: free; Core: $25/mo or $20/mo billed annually; Pro: $100/mo or $95/mo billed annually; Enterprise: custom",
+          "claimId": "claim-replit-agent-nw-r-pricing-monthly"
+        },
+        "mobile": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-replit-agent-cmp-mobile"
+        },
+        "license": {
+          "kind": "text",
+          "value": "Replit owns the Service/software (no public Agent LICENSE)",
+          "claimId": "claim-replit-agent-sf-service-ownership"
+        },
+        "local": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-replit-agent-sf-local-models"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-replit-agent-sf-loop-supported"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-replit-agent-sf-016"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-replit-agent-cmp-subscription-reuse"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-replit-agent-cmp-sandbox"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-replit-agent-cmp-human-gates"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-replit-agent-nw-r-surface-mobile"
+        }
+      },
+      "remote_support": {
+        "client": "s",
+        "relay": "s",
+        "private": "k",
+        "shell": "s",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "s"
+      }
+    },
+    "symphony": {
+      "compare_page_status": "active",
+      "cells": {
+        "primary": {
+          "kind": "text",
+          "value": "symphony CLI",
+          "claimId": "claim-symphony-sf-surface-cli"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "same-device per-issue workspace",
+          "claimId": "claim-symphony-sf-execution-local"
+        },
+        "license": {
+          "kind": "text",
+          "value": "Apache-2.0",
+          "claimId": "claim-symphony-sf-license"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-symphony-sf-tag-parallel-agents"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "$0",
+          "claimId": "claim-symphony-cmp-pricing-zero"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-symphony-cmp-loop-unsupported"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "Optional Phoenix LiveView dashboard",
+          "claimId": "claim-symphony-sf-surface-dashboard"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "k",
+        "private": "k",
+        "shell": "k",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "k"
+      }
+    },
+    "t3-code": {
+      "compare_page_status": "active",
+      "cells": {
+        "secondary": {
+          "kind": "text",
+          "value": "orchestrator",
+          "claimId": "claim-t3-code-sf-secondary-role-orchestrator"
+        },
+        "loc": {
+          "kind": "text",
+          "value": "user-controlled T3 server host",
+          "claimId": "claim-t3-code-sf-execution-location"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "cli",
+          "claimId": "claim-t3-code-sf-surface-cli"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "no T3 Tools subscription fee; provider costs separate",
+          "claimId": "claim-t3-code-sf-pricing"
+        },
+        "license": {
+          "kind": "text",
+          "value": "MIT",
+          "claimId": "claim-t3-code-sf-license"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-t3-code-sf-tag-remote-machine"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-t3-code-sf-tag-subscription-reuse"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-t3-code-sf-tag-human-gates"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-t3-code-cmp-loop-unsupported"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-t3-code-cmp-byok"
+        },
+        "mobile": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-t3-code-cmp-mobile"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "u",
+          "claimId": "claim-t3-code-cmp-isolation-unsupported"
+        }
+      },
+      "remote_support": {
+        "client": "s",
+        "relay": "s",
+        "private": "s",
+        "shell": "s",
+        "mterm": "k",
+        "mweb": "k",
+        "msg": "k"
+      }
+    },
+    "zcode": {
+      "compare_page_status": "active",
+      "cells": {
+        "loc": {
+          "kind": "text",
+          "value": "same-device for local workspaces",
+          "claimId": "claim-zcode-sf-execution-local"
+        },
+        "primary": {
+          "kind": "text",
+          "value": "desktop-app",
+          "claimId": "claim-zcode-sf-surface-desktop"
+        },
+        "sub": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-zcode-sf-subscription-reuse"
+        },
+        "byok": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-zcode-sf-byok"
+        },
+        "sandbox": {
+          "kind": "state",
+          "value": "k",
+          "claimId": "claim-zcode-sf-isolation"
+        },
+        "pricing": {
+          "kind": "text",
+          "value": "no separate ZCode seat on opened pages; GLM Coding Plan prices",
+          "claimId": "claim-zcode-sf-pricing"
+        },
+        "remote": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-zcode-sf-tag-remote-machine"
+        },
+        "multi": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-zcode-sf-tag-subagents"
+        },
+        "gates": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-zcode-cmp-human-gates"
+        },
+        "loop": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-zcode-cmp-loop-supported"
+        },
+        "license": {
+          "kind": "text",
+          "value": "Proprietary",
+          "claimId": "claim-zcode-cmp-license-proprietary"
+        },
+        "local": {
+          "kind": "state",
+          "value": "s",
+          "claimId": "claim-zcode-cmp-local-models"
+        },
+        "secondary": {
+          "kind": "text",
+          "value": "ZCode Mobile Remote Control",
+          "claimId": "claim-zcode-sf-surface-mobile-remote"
+        }
+      },
+      "remote_support": {
+        "client": "k",
+        "relay": "k",
+        "private": "k",
+        "shell": "s",
+        "mterm": "k",
+        "mweb": "s",
+        "msg": "s"
+      }
+    }
+  }
+}

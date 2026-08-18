@@ -1,5 +1,5 @@
 {
-  "pack_version": "2026-08-18+340a252a",
+  "pack_version": "2026-08-18+3e2dcc68",
   "derivation": "Mechanical extraction from claim notes-field marker phrases (Disputed by / Contradicts canonical / Conflicts with / Updated by). No judgment applied; non-exhaustive. referenced_claim_ids are all claim ids appearing in the note, which may include plain cross-references beside the disputing row. Both sides of every dispute ship in the product files; keep both, never average.",
   "counts": {
     "conflicts_with": 53,
