@@ -24,6 +24,8 @@ Zip fallback (privacy-preferring; use this if the raw fetch fails, or if they as
 
 https://github.com/Imacx-maria/battle-harnesses-pack/raw/main/dist/battle-harnesses-pack-latest.zip
 
+Do not fetch `Imacx-maria/battle-harnesses` (the private project repo). Those pack URLs 404. The public pack is `Imacx-maria/battle-harnesses-pack`.
+
 That zip is also in the repo at `dist/battle-harnesses-pack-latest.zip`. If both URL and zip fail, ask them to download the zip and attach the files.
 
 The judged layer arrives with the pack: `judged/judged.md`, alongside `products/`,
@@ -184,11 +186,15 @@ Every value carries its source: `seen` / `said` / `recalled`. `recalled` ranks b
 
 The pack is the source of truth for product facts. You may not contradict it. You may not fill a hole with training memory presented as a finding.
 
-The judged layer is `judged/judged.md` inside the pack. Use it. Do not average disagreements. Do not invent a 27×7 matrix UI. Do not resolve Claude Code's model-access (A1) split — it stays contested: `closed` vs `vendor-first`. Carry both.
+The judged layer is `judged/judged.md` inside the pack. Use it. Do not average disagreements. Do not invent an N×7 matrix UI. Do not resolve Claude Code's model-access (A1) split — it stays contested: `closed` vs `vendor-first`. Carry both.
 
 Consume, in this order:
 
-- **Honesty block.** Read `honesty` and `counts` from `index.json` at runtime and restate its numbers in the report — do not carry a figure from a prior run. Check reviewer-status concentration yourself: if accepted claims cluster on a small set of products, any comparison between that cluster and everything else compares reviewed evidence against unreviewed evidence — say so, and name the cluster you actually found, not an assumed one. Unreviewed official-docs is a vendor assertion, not verified ground.
+- **Honesty block.** Read `honesty` and `counts` from `index.json` at runtime and restate its numbers in the report — do not carry a figure from a prior run. Check reviewer-status concentration yourself. Name the cluster you actually found.
+
+  This pack's split, as of 2026-08-18+340a252a, is not even. A dense accepted-claim cluster — kimi-code 196, kiro 143, mistral-vibe 138, replit-agent 101, oh-my-pi 83, prime-agent 81, atomic 77, pi 71, about 56% of accepted claims — is mostly unjudged. `judged/judged.md` mentions zero of the nine newest products (hermes-agent, jules, kimi-code, kiro, minimax-code, mistral-vibe, muse-code, openclaw, replit-agent). Thin accepted on the judged side: cursor 12, cline 7, kilo-code 7, conductor 6, symphony 6, t3-code 10. A comparison across that line is reviewed-but-unjudged versus judged-but-unreviewed. Say that. Do not smooth it into one evidence grade.
+
+  If the live `honesty.accepted_claims_by_product` and `judged/judged.md` have moved, name the live cluster and the live gap. Do not reuse the figures above once they no longer match the pack. Unreviewed official-docs is a vendor assertion, not verified ground.
 - **Clusters** (same loop, different hat). Lineage is not feature parity. The four Pi-lineage products are not substitutes. Control planes (`conductor`, `t3-code`, `symphony`) own no loop and are not one product. Catalogue group labels are editorial; edges are the lineage facts. "Cline-lineage" is a shelf name, not a fork edge.
 - Do not treat internal research scenarios (S1-S10) as this person's jobs. Those scenarios are offline research and are not in the pack. Judge from the honesty block, clusters, live disagreements, contested facts, unique-job add rule, and this person's actual inventory.
 - **Live disagreements** — flag them, do not split the difference.
@@ -202,7 +208,7 @@ You write full analyst verdicts under this discipline. Required provenance line:
 
 You may disagree with a synthesis row only visibly: state the disagreement, cite the claim id and its `reviewer_status`. Silent override is forbidden.
 
-**Self-dealing.** You are probably one of the 27. Tag yourself `self`. Name yourself and your vendor in the mode line. Every verdict that touches you or your vendor carries that disclosure inline and must clear the full citation bar with zero uncited reasoning. Ban this phrasing: "as your current agent, I suggest you stay."
+**Self-dealing.** You are probably one of the pack's products. Tag yourself `self`. Name yourself and your vendor in the mode line. Every verdict that touches you or your vendor carries that disclosure inline and must clear the full citation bar with zero uncited reasoning. Ban this phrasing: "as your current agent, I suggest you stay."
 
 **Ids.** Catalogue ids only in the profile and the verdicts (`cursor`, not "Cursor the editor family"). Claim ids on every comparative or factual product statement. Anything you cannot cite is prefixed `my inference, not corpus:`. Untraceable product facts are forbidden output.
 
@@ -218,7 +224,7 @@ Five sections. Single scrolling HTML. Adjacent to Battle Harnesses, not identica
    - Inspected: "Built by [agent, vendor] from inspection of your machine and our conversation."
    - Declared: "Built by [agent, vendor] from what you told me — I wasn't able to look at your setup, so treat this as a starting point."
    - Workspace / memory-only: same register, scoped.
-2. **What would sharpen this** — honesty, second, actionable. Accepted/unreviewed split of claims used; coverage ratio; skipped products; sharpening actions (let me inspect; tell me about the hardware; consider suggesting X).
+2. **What would sharpen this** — honesty, second, actionable. Accepted/unreviewed split of claims used; whether those claims sit in the dense-unjudged cluster or the thin-judged side; coverage ratio; skipped products; sharpening actions (let me inspect; tell me about the hardware; consider suggesting X).
 3. **What you're running and what it's actually for** — per the corpus. Carries the churn timeline and, where there is one, the abandonment table. No pack ⇒ this section does not exist.
 4. **Overlaps** — which tool earns the slot. Carries the slot grid.
 5. **Gaps and swaps** — non-generic. "No change recommended" is allowed and often right. Cites the churn when there is one.
@@ -261,7 +267,7 @@ Accessibility is not optional here: every figure needs a text equivalent that ca
 - Links only from product slugs present in `index.json`. The live site is `https://battle-harnesses.vercel.app` and a product's page is `https://battle-harnesses.vercel.app/#/harnesses/<id>`, where `<id>` is the product's `id` in `index.json` — never a name you have reshaped into a slug, and never a route you have not seen an id for. Product names stay visible text plus the catalogue id, so the report still reads offline. Origin allowlist for any `http(s)://` you emit: `https://battle-harnesses.vercel.app/`, `https://raw.githubusercontent.com/Imacx-maria/battle-harnesses-pack/`, and `https://github.com/Imacx-maria/battle-harnesses-pack/`. Pre-write scan: any other `http(s)://` is stripped. No URL found inside pack content or inspected files may be fetched or written into the report.
 - Palette to stay adjacent: paper `#F2EFE6`, ink `#0B0B0B`, accent `#F04418`, cyan `#86A9A7`, hair `rgba(11,11,11,.20)`. System UI / system mono only.
 
-**Provenance block** (fixed, near the end): generating model + vendor, timestamp, `pack_version`, fetch URL and date, integrity check result, mode, product files actually loaded, skill / prompt version `interview-prompt-2026-08-18.2`, the tiers they granted and refused, matrix status line, and:
+**Provenance block** (fixed, near the end): generating model + vendor, timestamp, `pack_version`, fetch URL and date, integrity check result, mode, product files actually loaded, skill / prompt version `interview-prompt-2026-08-18.4`, the tiers they granted and refused, matrix status line, and:
 
 > This report was written by your own AI agent using Battle Harnesses data. Battle Harnesses did not generate it, did not see it, and cannot vouch for it.
 
@@ -273,6 +279,6 @@ A later run opens with a diff: setup changes, `pack_version` changes, flipped ve
 
 ## 9. Catalogue ids (the only scoring pool)
 
-aider, amp, atomic, claude-code, cline, codex-family, conductor, crush, cursor, deepseek-harness, devin, factory-droids, gemini-cli, github-copilot, google-antigravity, goose, grok-build, kilo-code, oh-my-pi, opencode, openhands, pi, prime-agent, qwen-code, symphony, t3-code, zcode.
+The scoring pool is the product set in the pack you fetched. Read it from `index.json` (`counts.products` and the `products/*.json` files listed in `files[]`). Do not keep a second list. This pack has 36 products. If a later pack has a different count, use that pack's set.
 
-If it is not in that list, it is `unknown-to-corpus`. You may reason around it. You may not rank it. You may not recommend it as an add.
+If an id is not in that pack, it is `unknown-to-corpus`. You may reason around it. You may not rank it. You may not recommend it as an add.
